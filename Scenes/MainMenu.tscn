@@ -6,47 +6,51 @@
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = 6.0
-offset_right = 6.0
-offset_bottom = 6.0
+anchor_bottom = 1.0
+offset_left = -238.0
+offset_top = -198.0
+offset_right = -238.0
+offset_bottom = -198.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+scale = Vector2(1.21043, 1.21829)
+size_flags_vertical = 8
 script = ExtResource("1_tt5f1")
+metadata/_edit_horizontal_guides_ = [187.0]
 
-[node name="Start" type="Button" parent="."]
-layout_mode = 0
-offset_left = -101.0
-offset_top = -119.0
-offset_right = 100.0
-offset_bottom = -51.0
-focus_neighbor_top = NodePath("../Quit")
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.315, 2.315)
+theme_override_constants/separation = 87
+
+[node name="Start" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../Quit")
 text = "Start"
 script = ExtResource("2_853f1")
 
-[node name="Options" type="Button" parent="."]
-layout_mode = 0
-offset_left = -101.0
-offset_top = -10.0
-offset_right = 100.0
-offset_bottom = 58.0
+[node name="Options" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 text = "Options"
 script = ExtResource("3_8saeu")
 
-[node name="Quit" type="Button" parent="."]
-layout_mode = 0
-offset_left = -101.0
-offset_top = 107.0
-offset_right = 100.0
-offset_bottom = 175.0
-focus_neighbor_bottom = NodePath("../Start")
+[node name="Quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../Start")
 text = "Quit"
 
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]

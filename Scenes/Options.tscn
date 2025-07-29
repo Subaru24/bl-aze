@@ -7,10 +7,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_horizontal_guides_ = [342.0, 342.0]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 123.0
-offset_bottom = 24.0
-scale = Vector2(7.88, 7.88)
-text = "OPTIONS"
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 19.0
+offset_right = 36.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="20" type="Button" parent="."]
+layout_mode = 2
+offset_left = 532.0
+offset_top = 322.0
+offset_right = 562.0
+offset_bottom = 342.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="40" type="Button" parent="."]
+offset_left = 565.0
+offset_top = 312.0
+offset_right = 595.0
+offset_bottom = 342.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="60" type="Button" parent="."]
+offset_left = 598.0
+offset_top = 297.0
+offset_right = 628.0
+offset_bottom = 342.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="80" type="Button" parent="."]
+offset_left = 632.0
+offset_top = 275.0
+offset_right = 662.0
+offset_bottom = 342.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="100" type="Button" parent="."]
+offset_left = 666.0
+offset_top = 241.0
+offset_right = 696.0
+offset_bottom = 342.25
+size_flags_horizontal = 4
+size_flags_vertical = 4

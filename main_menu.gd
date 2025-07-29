@@ -1,6 +1,6 @@
 extends Control
 func _ready() -> void:
-	$Start.grab_focus() # Focuses the start button for easier access 
+	$HBoxContainer/Start.grab_focus() # Focuses the start button for easier access 
 
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn") # Go to the Main Game
@@ -13,6 +13,3 @@ func _on_options_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().quit() # Closes the program
 	
-
-# jkfdhskjfkdsfkhk
-# dfjkdlskfjldksf
