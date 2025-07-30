@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bok2incgoeoqt"
+path="res://.godot/imported/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3-e8c54caf233e55cfdf86e1766a216d43.mp3str"
+
+[deps]
+
+source_file="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3"
+dest_files=["res://.godot/imported/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3-e8c54caf233e55cfdf86e1766a216d43.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

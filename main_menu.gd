@@ -7,6 +7,7 @@ func _on_start_pressed():
 
 
 func _on_options_pressed() -> void:
+	print("pressed")
 	get_tree().change_scene_to_file("res://Scenes/Options.tscn") # Opens Options
 
 

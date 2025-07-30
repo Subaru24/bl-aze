@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnt1wmo0d86sx"]
+[gd_scene load_steps=4 format=3 uid="uid://cnt1wmo0d86sx"]
+
+[ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="1_qqnya"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6wc4"]
 font_size = 130
@@ -14,6 +16,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_qqnya")
+autoplay = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false
@@ -141,6 +147,9 @@ custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+
+[node name="20" type="Button" parent="Variables/VolGrid"]
+layout_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="Variables"]
 layout_mode = 2
