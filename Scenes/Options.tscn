@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://cnt1wmo0d86sx"]
+[gd_scene load_steps=3 format=3 uid="uid://cnt1wmo0d86sx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6wc4"]
+font_size = 130
+
+[sub_resource type="Theme" id="Theme_a6wc4"]
+default_base_scale = 2.0
+default_font_size = 35
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -7,21 +14,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_horizontal_guides_ = [342.0, 342.0]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 36.0
-offset_top = 19.0
-offset_right = 36.0
-offset_bottom = 19.0
+offset_left = 230.0
+offset_top = 90.0
+offset_right = 230.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="20" type="Button" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 532.0
 offset_top = 322.0
@@ -31,6 +39,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="40" type="Button" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 565.0
 offset_top = 312.0
 offset_right = 595.0
@@ -39,6 +49,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="60" type="Button" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 598.0
 offset_top = 297.0
 offset_right = 628.0
@@ -47,6 +59,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="80" type="Button" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 632.0
 offset_top = 275.0
 offset_right = 662.0
@@ -55,9 +69,83 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="100" type="Button" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 666.0
 offset_top = 241.0
 offset_right = 696.0
 offset_bottom = 342.25
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 250.0
+offset_top = -403.0
+offset_right = 1248.0
+offset_bottom = -225.0
+text = "Toggle Minimap"
+label_settings = SubResource("LabelSettings_a6wc4")
+
+[node name="Variables" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 98.0
+offset_top = 164.0
+offset_right = 1096.0
+offset_bottom = 425.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Label" type="Label" parent="Variables"]
+layout_mode = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_a6wc4")
+
+[node name="VolGrid" type="GridContainer" parent="Variables"]
+layout_mode = 2
+size_flags_vertical = 8
+columns = 6
+
+[node name="ColorRect" type="ColorRect" parent="Variables/VolGrid"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+
+[node name="ColorRect2" type="ColorRect" parent="Variables/VolGrid"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+
+[node name="ColorRect3" type="ColorRect" parent="Variables/VolGrid"]
+custom_minimum_size = Vector2(100, 112.5)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="ColorRect4" type="ColorRect" parent="Variables/VolGrid"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+
+[node name="ColorRect5" type="ColorRect" parent="Variables/VolGrid"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CheckButton" type="CheckButton" parent="Variables"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.05
+theme = SubResource("Theme_a6wc4")
+text = "Toggle Minimap"
