@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnt1wmo0d86sx"]
+[gd_scene load_steps=5 format=3 uid="uid://cnt1wmo0d86sx"]
 
+[ext_resource type="Script" uid="uid://dfgp3csnplidn" path="res://Scenes/options.gd" id="1_hg628"]
 [ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="1_qqnya"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6wc4"]
@@ -16,6 +17,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hg628")
+
+[node name="20" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 2
+offset_left = 578.0
+offset_top = 209.0
+offset_right = 681.0
+offset_bottom = 365.0
+text = "fdsfsdfdsfds"
+icon_alignment = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_qqnya")
@@ -33,56 +46,6 @@ offset_right = 230.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="20" type="Button" parent="."]
-visible = false
-layout_mode = 2
-offset_left = 532.0
-offset_top = 322.0
-offset_right = 562.0
-offset_bottom = 342.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="40" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 565.0
-offset_top = 312.0
-offset_right = 595.0
-offset_bottom = 342.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="60" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 598.0
-offset_top = 297.0
-offset_right = 628.0
-offset_bottom = 342.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="80" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 632.0
-offset_top = 275.0
-offset_right = 662.0
-offset_bottom = 342.5
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="100" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 666.0
-offset_top = 241.0
-offset_right = 696.0
-offset_bottom = 342.25
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
@@ -118,38 +81,40 @@ layout_mode = 2
 size_flags_vertical = 8
 columns = 6
 
-[node name="ColorRect" type="ColorRect" parent="Variables/VolGrid"]
+[node name="20Rect" type="ColorRect" parent="Variables/VolGrid"]
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 8
+mouse_filter = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Variables/VolGrid"]
+[node name="40Rect" type="ColorRect" parent="Variables/VolGrid"]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 8
+mouse_filter = 2
 
-[node name="ColorRect3" type="ColorRect" parent="Variables/VolGrid"]
+[node name="60Rect" type="ColorRect" parent="Variables/VolGrid"]
 custom_minimum_size = Vector2(100, 112.5)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
+mouse_filter = 2
 
-[node name="ColorRect4" type="ColorRect" parent="Variables/VolGrid"]
+[node name="80Rect" type="ColorRect" parent="Variables/VolGrid"]
 custom_minimum_size = Vector2(100, 150)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 8
+mouse_filter = 2
 
-[node name="ColorRect5" type="ColorRect" parent="Variables/VolGrid"]
+[node name="100Rect" type="ColorRect" parent="Variables/VolGrid"]
 custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-
-[node name="20" type="Button" parent="Variables/VolGrid"]
-layout_mode = 2
+mouse_filter = 2
 
 [node name="CheckButton" type="CheckButton" parent="Variables"]
 layout_mode = 2
@@ -158,3 +123,5 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 3.05
 theme = SubResource("Theme_a6wc4")
 text = "Toggle Minimap"
+
+[connection signal="pressed" from="20" to="." method="_on_20_pressed"]
