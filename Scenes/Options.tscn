@@ -24,8 +24,52 @@ modulate = Color(1, 1, 1, 0)
 top_level = true
 layout_mode = 2
 offset_left = 578.0
-offset_top = 209.0
+offset_top = 300.0
 offset_right = 681.0
+offset_bottom = 365.0
+text = "fdsfsdfdsfds"
+icon_alignment = 1
+
+[node name="40" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 2
+offset_left = 683.0
+offset_top = 284.0
+offset_right = 786.0
+offset_bottom = 365.0
+text = "fdsfsdfdsfds"
+icon_alignment = 1
+
+[node name="60" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 2
+offset_left = 786.0
+offset_top = 250.0
+offset_right = 889.0
+offset_bottom = 365.0
+text = "fdsfsdfdsfds"
+icon_alignment = 1
+
+[node name="80" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 2
+offset_left = 891.48
+offset_top = 209.0
+offset_right = 994.48
+offset_bottom = 365.0
+text = "fdsfsdfdsfds"
+icon_alignment = 1
+
+[node name="100" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 2
+offset_left = 996.0
+offset_top = 165.0
+offset_right = 1099.0
 offset_bottom = 365.0
 text = "fdsfsdfdsfds"
 icon_alignment = 1
@@ -124,4 +168,13 @@ size_flags_stretch_ratio = 3.05
 theme = SubResource("Theme_a6wc4")
 text = "Toggle Minimap"
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="20" to="." method="_on_20_pressed"]
+[connection signal="pressed" from="40" to="." method="_on_40_pressed"]
+[connection signal="pressed" from="60" to="." method="_on_60_pressed"]
+[connection signal="pressed" from="80" to="." method="_on_80_pressed"]
+[connection signal="pressed" from="100" to="." method="_on_100_pressed"]
