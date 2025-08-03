@@ -14,7 +14,6 @@ extends Control
 
 func _ready() -> void:
 	AudioServer.set_bus_volume_linear(master,1)
-	
 
 func checkVol(rectArr):
 	var index = 0
@@ -25,34 +24,53 @@ func checkVol(rectArr):
 			nodeArr[index].self_modulate =  Color (1,1,1,1)
 		index += 1
 	
-
+func _process(delta):
+	if Input.is_action_just_pressed("goBack"):
+		_on_back_pressed()
 
 func _on_20_pressed() -> void:
 	print("20%")
 	var locRectArr = [true,false,false,false,false]
 	checkVol(locRectArr)
 	AudioServer.set_bus_volume_linear(master, 0.2)
+	print(str(AudioServer.get_bus_volume_linear(master) * 100) + "%")
 
 func _on_40_pressed() -> void:
 	print("40%")
 	var locRectArr = [true,true,false,false,false]
 	checkVol(locRectArr)
 	AudioServer.set_bus_volume_linear(master, 0.4)
+	print(str(AudioServer.get_bus_volume_linear(master) * 100) + "%")
 
 func _on_60_pressed() -> void:
 	print("60%")
 	var locRectArr = [true,true,true,false,false]
 	checkVol(locRectArr)
 	AudioServer.set_bus_volume_linear(master, 0.6)
+	print(str(AudioServer.get_bus_volume_linear(master) * 100) + "%")
 
 func _on_80_pressed() -> void:
 	print("80%")
 	var locRectArr = [true,true,true,true,false]
 	checkVol(locRectArr)
 	AudioServer.set_bus_volume_linear(master, 0.8)
+	print(str(AudioServer.get_bus_volume_linear(master) * 100) + "%")
 
 func _on_100_pressed() -> void:
 	print("100%")
 	var locRectArr = [true,true,true,true,true]
 	checkVol(locRectArr)
 	AudioServer.set_bus_volume_linear(master, 1)
+	print(str(AudioServer.get_bus_volume_linear(master) * 100) + "%")
+
+
+func _on_check_button_toggled(toggleMinimap: bool) -> void:
+	if toggleMinimap == true:
+		print("on")
+	else:
+		print("off")
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	

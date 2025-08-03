@@ -17,9 +17,3 @@ offset_bottom = 200.0
 scale = Vector2(7.88, 7.88)
 text = "This is the game"
 horizontal_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
-layout_mode = 0
-offset_top = -22.0
-offset_right = 144.0
-offset_bottom = 40.0
