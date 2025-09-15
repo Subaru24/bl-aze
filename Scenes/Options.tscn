@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnt1wmo0d86sx"]
 
-[ext_resource type="Script" uid="uid://dfgp3csnplidn" path="res://Scenes/options.gd" id="1_hg628"]
+[ext_resource type="Script" uid="uid://do86mby8asr7w" path="res://Scenes/options-menu.gd" id="1_5hy3q"]
 [ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="1_qqnya"]
 [ext_resource type="Texture2D" uid="uid://bjymhcbs444sq" path="res://Icons/back-button-svgrepo-com.svg" id="3_5hy3q"]
 
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hg628")
+script = ExtResource("1_5hy3q")
 
 [node name="20" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
