@@ -97,15 +97,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 2
-offset_left = 250.0
-offset_top = -403.0
-offset_right = 1248.0
-offset_bottom = -225.0
-text = "Toggle Minimap"
-label_settings = SubResource("LabelSettings_a6wc4")
-
 [node name="Variables" type="GridContainer" parent="."]
 layout_mode = 2
 offset_left = 98.0
