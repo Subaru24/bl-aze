@@ -7,7 +7,6 @@ extends Control
 @onready var nodeArr = [twentyBar,fourtyBar,sixtyBar,eightyBar,hundredBar]
 #AudioServer.get_bus_index("Master")
 @onready var master = AudioServer.get_bus_index("Master")
-@onready var masterfull = AudioServer.get_bus_index("Master")
 
 
 
