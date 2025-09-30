@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnt1wmo0d86sx"]
 
-[ext_resource type="Script" path="res://Scenes/options-menu.gd" id="1_5hy3q"]
+[ext_resource type="Script" uid="uid://do86mby8asr7w" path="res://Scenes/options-menu.gd" id="1_5hy3q"]
 [ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="1_qqnya"]
 [ext_resource type="Texture2D" uid="uid://bjymhcbs444sq" path="res://Icons/back-button-svgrepo-com.svg" id="3_5hy3q"]
 
@@ -23,7 +23,7 @@ script = ExtResource("1_5hy3q")
 [node name="20" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 top_level = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 578.0
 offset_top = 300.0
 offset_right = 681.0
@@ -34,7 +34,7 @@ icon_alignment = 1
 [node name="40" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 top_level = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 683.0
 offset_top = 284.0
 offset_right = 786.0
@@ -45,7 +45,7 @@ icon_alignment = 1
 [node name="60" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 top_level = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 786.0
 offset_top = 250.0
 offset_right = 889.0
@@ -56,7 +56,7 @@ icon_alignment = 1
 [node name="80" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 top_level = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 891.48
 offset_top = 209.0
 offset_right = 994.48
@@ -67,7 +67,7 @@ icon_alignment = 1
 [node name="100" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 top_level = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 996.0
 offset_top = 165.0
 offset_right = 1099.0
@@ -98,7 +98,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Variables" type="GridContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 98.0
 offset_top = 164.0
 offset_right = 1096.0

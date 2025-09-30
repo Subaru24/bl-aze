@@ -1,37 +1,41 @@
 extends Control
+
+# ColorRect Nodes
 @onready var twentyBar = $"Variables/VolGrid/20Rect"
 @onready var fourtyBar = $"Variables/VolGrid/40Rect"
 @onready var sixtyBar = $"Variables/VolGrid/60Rect"
 @onready var eightyBar = $"Variables/VolGrid/80Rect"
 @onready var hundredBar = $"Variables/VolGrid/100Rect"
+# Volume Array
 @onready var nodeArr = [twentyBar,fourtyBar,sixtyBar,eightyBar,hundredBar]
 #AudioServer.get_bus_index("Master")
-@onready var master = AudioServer.get_bus_index("Master")
+@onready var master = AudioServer.get_bus_index("Master") #Able to use the "Master" volume index
 
 
 
 
 func _ready() -> void:
 	AudioServer.set_bus_volume_linear(master,1)
+	#print(Time.get_datetime_string_from_system())
 
 func checkVol(rectArr):
 	var index = 0
 	for rect in rectArr:
-		if rectArr[index] == false:
+		if rect == false:
 			nodeArr[index].self_modulate =  Color (1,1,1,0.5)
-		elif rectArr[index] == true:
+		else:
 			nodeArr[index].self_modulate =  Color (1,1,1,1)
 		index += 1
 	
 func _process(delta):
-	if Input.is_action_just_pressed("goBack"):
-		_on_back_pressed()
+	# if Input.is_action_just_pressed("goBack"):
+	# 	_on_back_pressed()
 
 func _on_20_pressed() -> void:
 	print("20%")
-	var locRectArr = [true,false,false,false,false]
+	var locRectArr = [true,false,false,false,false] 
 	checkVol(locRectArr)
-	AudioServer.set_bus_volume_linear(master, 0.2)
+	AudioServer.set_bus_volume_linear(master, 0.2) # Sets the volume to 20%
 	print(str(AudioServer.get_bus_volume_linear(master) * 100) + "%")
 
 func _on_40_pressed() -> void:
