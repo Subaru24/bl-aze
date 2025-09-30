@@ -27,9 +27,9 @@ func checkVol(rectArr):
 			nodeArr[index].self_modulate =  Color (1,1,1,1)
 		index += 1
 	
-func _process(delta):
-	# if Input.is_action_just_pressed("goBack"):
-	# 	_on_back_pressed()
+func _process(_delta):
+	if Input.is_action_just_pressed("goBack"):
+		_on_back_pressed()
 
 func _on_20_pressed() -> void:
 	print("20%")
