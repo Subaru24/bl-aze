@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var maze = []
+@onready var tilemapLayer = $MazeTile
+
+const WALL = Vector2i(0,0)
+const PATH = Vector2i(1,0)
 
 const N = 1
 const E = 2
