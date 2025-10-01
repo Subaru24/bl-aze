@@ -6,13 +6,17 @@ extends Node2D
 const WALL = Vector2i(0,0)
 const PATH = Vector2i(1,0)
 
+const WALLCOLOR = Color("#ffffff")
+const PATHCOLOR = Color("#000000")
+
 const N = 1
 const E = 2
 const S = 4
 const W = 8
 
-var rowSize = 20
-var colSize = 20
+var rowSize = 100
+var colSize = 100
+var cellSize = 10
 
 var cellWalls = {
 
@@ -50,6 +54,7 @@ func _ready() -> void:
 	mazeInit(rowSize,colSize)
 	maze[1][1] = 0
 	generateMaze(1,1)
+	_draw()
 	displayMaze()
 
 
@@ -101,3 +106,12 @@ func generateMaze(currentRow,currentCol):
 			maze[dirRow/2 + currentRow][dirCol/2 + currentCol] = 0
 			maze[newRow][newCol] = 0
 			generateMaze(newRow,newCol)
+			
+
+func _draw():
+	# Draw the maze
+	for rows in range(rowSize):
+		for cols in range(colSize):
+			var color = WALLCOLOR if maze[rows][cols] == 1 else PATHCOLOR
+			var rect = Rect2(cols * cellSize, rows * cellSize, cellSize, cellSize)
+			draw_rect(rect, color)
