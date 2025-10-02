@@ -9,8 +9,8 @@ const PATH = Vector2i(0,0)
 
 
 
-var rowSize = 20
-var colSize = 20
+var rowSize = 30
+var colSize = 30
 var cellSize = 20
 
 
