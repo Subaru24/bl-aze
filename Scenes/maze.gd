@@ -5,13 +5,13 @@ extends Node2D
 
 const WALL = Vector2i(1,0)
 const PATH = Vector2i(0,0)
+const DEADEND = Vector2i(2,0)
 
-
-
-
-var rowSize = 20
-var colSize = 20
+var rowSize = 30
+var colSize = 30
 var cellSize = 20
+
+
 
 
 #var cellWallsText = {
@@ -33,13 +33,14 @@ var direction = [
 ]
 
 
-@onready var visited = []
+
 
 func _ready() -> void:
 	mazeInit()
 	maze[1][1] = 0
 	generateMaze()
 	_draw()
+	deadEnd()
 	displayMaze()
 
 
@@ -95,7 +96,7 @@ func makePath(currentRow,currentCol):
 		var newRow = dirRow + currentRow
 		var newCol = dirCol + currentCol
 		if newRow in range(1, rowSize - 1) and newCol in range(1, colSize - 1) and maze[newRow][newCol] == 1:
-			maze[dirRow / 2 + currentRow][dirCol / 2 + currentCol] = 0
+			maze[dirRow/2 + currentRow][dirCol/2 + currentCol] = 0
 			maze[newRow][newCol] = 0
 			makePath(newRow,newCol)
 			
@@ -106,6 +107,39 @@ func _draw():
 	# Draw the maze
 	for rows in range(rowSize):
 		for cols in range(colSize):
-			var tile = WALL if maze[rows][cols] == 1 else PATH
-			tilemapLayer.set_cell(Vector2i(cols,rows),0,tile)
-			
+			var tile = WALL if maze[rows][cols] == 1 else PATH if maze[rows][cols] == 0 else DEADEND
+			tilemapLayer.set_cell(Vector2i(cols,rows),3,tile)
+
+func deadEnd():
+	var deadEnds = []
+	for row in range(rowSize):
+		for col in range(colSize):
+			if maze[row][col] == 1:
+				continue
+
+			var neighbour = 0
+			var possibleDirs = [
+					[0,1],
+					[1,0],
+					[0,-1],
+					[-1,0]
+			]
+
+			for dir in possibleDirs:
+				var dirRow = dir[0]
+				var dirCol = dir[1]
+				var newRow = row + dirRow
+				var newCol = col + dirCol
+				if (0 <= newRow and newRow < len(maze) and 0 <= newCol and newCol < len(maze[0]) and maze[newRow][newCol] == 0):
+					neighbour+=1
+
+			if neighbour == 1:
+				deadEnds.append([row,col])
+	print(deadEnds)
+	fillDeadEnds(deadEnds)
+
+func fillDeadEnds(deadEnds):
+	for coords in deadEnds:
+		var x = coords[0]
+		var y = coords[1]
+		maze[x][y] = 4

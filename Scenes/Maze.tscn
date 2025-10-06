@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://didmwhk1y8yo2"]
+[gd_scene load_steps=11 format=3 uid="uid://didmwhk1y8yo2"]
 
 [ext_resource type="Script" uid="uid://c80ivwbcj002w" path="res://Scenes/maze.gd" id="1_v2hyu"]
 [ext_resource type="Texture2D" uid="uid://565cojm8hhd5" path="res://assests/mazetile.png" id="2_yuvd5"]
+[ext_resource type="Texture2D" uid="uid://lyjarmwirf8c" path="res://assests/redtile.png" id="3_5lbnq"]
+[ext_resource type="Texture2D" uid="uid://bk7hx03dinv0h" path="res://assests/greentile.png" id="4_g4w1m"]
+[ext_resource type="Texture2D" uid="uid://cm6cc6n155mut" path="res://assests/merge-mazetile.png" id="5_sww8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hdl3g"]
 texture = ExtResource("2_yuvd5")
@@ -9,9 +12,30 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yhxv"]
+texture = ExtResource("3_5lbnq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14cn6"]
+texture = ExtResource("4_g4w1m")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgewu"]
+texture = ExtResource("5_sww8e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_7hfkg"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_hdl3g")
+sources/1 = SubResource("TileSetAtlasSource_7yhxv")
+sources/2 = SubResource("TileSetAtlasSource_14cn6")
+sources/3 = SubResource("TileSetAtlasSource_rgewu")
 
 [node name="Maze" type="Node2D"]
 script = ExtResource("1_v2hyu")
