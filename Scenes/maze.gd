@@ -3,9 +3,10 @@ extends Node2D
 @onready var maze = []
 @onready var tilemapLayer = $MazeTile
 
-const WALL = Vector2i(1,0)
 const PATH = Vector2i(0,0)
-const DEADEND = Vector2i(2,0)
+const WALL = Vector2i(1,0)
+const END = Vector2i(2,0)
+const START = Vector2i(3,0)
 
 var rowSize = 30
 var colSize = 30
@@ -107,7 +108,7 @@ func _draw():
 	# Draw the maze
 	for rows in range(rowSize):
 		for cols in range(colSize):
-			var tile = WALL if maze[rows][cols] == 1 else PATH if maze[rows][cols] == 0 else DEADEND
+			var tile = WALL if maze[rows][cols] == 1 else PATH if maze[rows][cols] == 0 else END if maze[rows][cols] == 2 else START
 			tilemapLayer.set_cell(Vector2i(cols,rows),3,tile)
 
 func deadEnd():
@@ -136,10 +137,30 @@ func deadEnd():
 			if neighbour == 1:
 				deadEnds.append([row,col])
 	print(deadEnds)
-	fillDeadEnds(deadEnds)
+	chooseStartandEnd(deadEnds)
 
-func fillDeadEnds(deadEnds):
-	for coords in deadEnds:
-		var x = coords[0]
-		var y = coords[1]
-		maze[x][y] = 4
+func chooseStartandEnd(deadEnds):
+	var pickEnds = []
+	var start = deadEnds.pick_random()
+	var arrPos = deadEnds.find(start)
+	var high = len(deadEnds) - 1
+	var low = 0
+	var mid = len(deadEnds) / 2
+	if arrPos > mid:
+		high = 5
+		while high >= 0:
+			pickEnds.append(deadEnds[high])
+			high -= 1
+	elif arrPos <= mid:
+		low = -5
+		while low <= 0:
+			pickEnds.append(deadEnds[low])
+			low += 1
+	var end = pickEnds.pick_random()
+	maze[end[0]][end[1]] = 2
+	maze[start[0]][start[1]] = 3
+
+ 
+
+
+
