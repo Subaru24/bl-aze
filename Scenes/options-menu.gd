@@ -11,12 +11,13 @@ extends Control
 #AudioServer.get_bus_index("Master")
 @onready var master = AudioServer.get_bus_index("Master") #Able to use the "Master" volume index
 
-
+var toggleMinimap = true
+const USERPATH = "user://user-options.cfg"
 
 
 func _ready() -> void:
-	AudioServer.set_bus_volume_linear(master,1)
 	#print(Time.get_datetime_string_from_system())
+	loadOptions()
 
 func checkVol(rectArr):
 	var index = 0
@@ -66,7 +67,6 @@ func _on_100_pressed() -> void:
 	AudioServer.set_bus_volume_linear(master, 1)
 	print(str(AudioServer.get_bus_volume_linear(master) * 100) + "%")
 
-
 func _on_check_button_toggled(toggleMinimap: bool) -> void:
 	if toggleMinimap == true:
 		print("on")
@@ -75,5 +75,18 @@ func _on_check_button_toggled(toggleMinimap: bool) -> void:
 
 
 func _on_back_pressed() -> void:
+	saveOptions()
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	
+func saveOptions():
+	var options = ConfigFile.new()
+	options.set_value("User","Volume",int(AudioServer.get_bus_volume_linear(master) * 100))
+	options.set_value("User","Minimap",toggleMinimap)
+	options.save(USERPATH)
+
+func loadOptions():
+	var options = ConfigFile.new()
+	options.load(USERPATH)
+	var vol = options.get_value("User","Volume", 100)
+	var volCall = "_on_%s_pressed" % vol
+	call(volCall)
