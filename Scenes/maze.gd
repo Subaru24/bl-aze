@@ -42,7 +42,7 @@ func _ready() -> void:
 	generateMaze()
 	_draw()
 	deadEnd()
-	displayMaze()
+	#displayMaze()
 
 
 
@@ -136,7 +136,7 @@ func deadEnd():
 
 			if neighbour == 1:
 				deadEnds.append([row,col])
-	print(deadEnds)
+	#print(deadEnds)
 	chooseStartandEnd(deadEnds)
 
 func chooseStartandEnd(deadEnds):
@@ -159,8 +159,9 @@ func chooseStartandEnd(deadEnds):
 	var end = pickEnds.pick_random()
 	maze[end[0]][end[1]] = 2
 	maze[start[0]][start[1]] = 3
+	var startingTile = Vector2i(start[0],start[1])
+	Globals.startPos = tilemapLayer.map_to_local(startingTile)
+	print("Start tile:", startingTile, "World pos:", Globals.startPos)
+
 
  
-
-
-
