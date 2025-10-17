@@ -38,7 +38,6 @@ var direction = [
 
 func _ready() -> void:
 	mazeInit()
-	maze[1][1] = 0
 	generateMaze()
 	_draw()
 	deadEnd()
