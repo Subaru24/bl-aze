@@ -38,7 +38,8 @@ var direction = [
 
 func _ready() -> void:
 	mazeInit()
-	generateMaze()
+	maze[1][1] = 0
+	generateMaze(1,1)
 	_draw()
 	deadEnd()
 	#displayMaze()
@@ -81,24 +82,17 @@ func displayMaze():
 #		return cell
 
 # Actually create the final maze pattern
-func generateMaze():
-	mazeInit()
-	var startrow = 1
-	var startcol = 1
-	maze[startrow][startcol] = 0
-	makePath(startrow,startcol)
-
-func makePath(currentRow,currentCol):
+func generateMaze(currentRow,currentCol):
 	direction.shuffle()
 	for dir in direction:
 		var dirRow = dir[0]
 		var dirCol = dir[1]
 		var newRow = dirRow + currentRow
 		var newCol = dirCol + currentCol
-		if newRow in range(1, rowSize - 1) and newCol in range(1, colSize - 1) and maze[newRow][newCol] == 1:
+		if newRow > 0 and newRow < rowSize - 1 and newCol > 0 and newCol < colSize - 1  and maze[newRow][newCol] == 1:
 			maze[dirRow/2 + currentRow][dirCol/2 + currentCol] = 0
 			maze[newRow][newCol] = 0
-			makePath(newRow,newCol)
+			generateMaze(newRow,newCol)
 			
 
 func _draw():
