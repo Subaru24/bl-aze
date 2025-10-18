@@ -1,3 +1,5 @@
 extends Node
 
-var startPos: Vector2
+var startPos
+var startPosTile: Vector2
+var endPos

@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	await get_tree().process_frame
-	global_position = Globals.startPos
+	global_position = Globals.startPosTile
 	print(Globals.startPos)
+	print(Globals.endPos)
 
 
 func _physics_process(_delta):

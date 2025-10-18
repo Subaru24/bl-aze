@@ -8,8 +8,8 @@ const WALL = Vector2i(1,0)
 const END = Vector2i(2,0)
 const START = Vector2i(3,0)
 
-var rowSize = 30
-var colSize = 30
+var rowSize = 15
+var colSize = 15
 var cellSize = 20
 
 
@@ -42,6 +42,7 @@ func _ready() -> void:
 	generateMaze(1,1)
 	_draw()
 	deadEnd()
+	shortestPathBFS(Globals.startPos,Globals.endPos)
 	#displayMaze()
 
 
@@ -152,9 +153,50 @@ func chooseStartandEnd(deadEnds):
 	var end = pickEnds.pick_random()
 	maze[end[0]][end[1]] = 2
 	maze[start[0]][start[1]] = 3
-	var startingTile = Vector2i(start[0],start[1])
-	Globals.startPos = tilemapLayer.map_to_local(startingTile)
-	print("Start tile:", startingTile, "World pos:", Globals.startPos)
+	var startingTile = Vector2i(start[1],start[0])
+	var endingTile = Vector2i(end[0],end[1])
+	Globals.startPosTile = tilemapLayer.map_to_local(startingTile)
+	Globals.startPos = start
+	Globals.endPos = end
+#	Globals.endPos = tilemapLayer.map_to_local(endingTile)
 
 
- 
+func shortestPathBFS(start,end):
+	var solution = []
+	var queue = []
+	var visited = []
+	
+	var costs = 0
+
+	queue.append(start)
+	visited.append(start)
+	while len(queue) != 0:
+		var selectedNode = queue.pop_front()
+		if selectedNode == end:
+			solution.append(selectedNode)
+			print(solution)
+		else:
+			solution.append(selectedNode)
+
+		var possibleDirs = [
+					[0,1],
+					[1,0],
+					[0,-1],
+					[-1,0]
+			]
+
+		for dir in possibleDirs:
+			var dirRow = dir[0]
+			var dirCol = dir[1]
+			var newRow = selectedNode[0] + dirRow
+			var newCol = selectedNode[1] + dirCol
+			var coord = [newRow,newCol]
+			if coord not in visited and maze[newRow][newCol] != 1:
+				queue.append(coord)
+				visited.append(coord)
+		costs += 1
+	print(solution)
+	print(costs)
+				
+	
+	
