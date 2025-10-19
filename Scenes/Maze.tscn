@@ -49,6 +49,7 @@ script = ExtResource("1_v2hyu")
 tile_set = SubResource("TileSet_7hfkg")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+motion_mode = 1
 script = ExtResource("7_sww8e")
 
 [node name="Player" type="Sprite2D" parent="CharacterBody2D"]
@@ -60,7 +61,3 @@ texture = ExtResource("6_g4w1m")
 visible = false
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_sww8e")
-
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(32, 32)

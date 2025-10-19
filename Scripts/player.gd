@@ -1,19 +1,22 @@
 extends CharacterBody2D
 
+const speed := 100.0
+var playerDir : Vector2
+
 func _ready() -> void:
 	await get_tree().process_frame
-	global_position = Globals.startPosTile
+	var tilePos = Globals.startPosTile
 	print(Globals.startPos)
 	print(Globals.endPos)
 
 
 func _physics_process(_delta):
-	velocity = Vector2.ZERO
-	if Input.is_action_pressed("moveUp"):
-		velocity.y = -1
-	if Input.is_action_pressed("moveDown"):
-		velocity.y = 1
-	if Input.is_action_pressed("moveLeft"):
-		velocity.x = -1
-	if Input.is_action_pressed("moveRight"):
-		velocity.x = 1
+	playerDir.x = Input.get_axis("moveLeft","moveRight")
+	playerDir.y = Input.get_axis("moveUp","moveDown")
+	
+	if playerDir:
+		velocity = playerDir * speed
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO,speed)
+	move_and_slide()
+	
