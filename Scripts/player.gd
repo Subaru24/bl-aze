@@ -6,6 +6,8 @@ var playerDir : Vector2
 func _ready() -> void:
 	await get_tree().process_frame
 	var tilePos = Globals.startPosTile
+	print(tilePos)
+	position = tilePos
 	print(Globals.startPos)
 	print(Globals.endPos)
 
@@ -15,8 +17,8 @@ func _physics_process(_delta):
 	playerDir.y = Input.get_axis("moveUp","moveDown")
 	
 	if playerDir:
-		velocity = playerDir * speed
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO,speed)
+			velocity = playerDir * speed
+	#else:
+	#	velocity = velocity.move_toward(Vector2.ZERO,speed)
 	move_and_slide()
 	

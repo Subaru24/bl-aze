@@ -8,8 +8,8 @@ const WALL = Vector2i(1,0)
 const END = Vector2i(2,0)
 const START = Vector2i(3,0)
 
-var rowSize = 15
-var colSize = 15
+var rowSize = 20
+var colSize = 20
 var cellSize = 20
 
 
@@ -104,9 +104,9 @@ func _draw():
 		for cols in range(colSize):
 			var tile = WALL if maze[rows][cols] == 1 else PATH if maze[rows][cols] == 0 else END if maze[rows][cols] == 2 else START
 			tilemapLayer.set_cell(Vector2i(cols,rows),3,tile)
-	#var bpp = shortestPathBFS(Globals.startPos,Globals.endPos)
-	#for til in bpp:
-	#	tilemapLayer.set_cell(Vector2i(til[1],til[0]),3,START)
+#	var bpp = shortestPathBFS(Globals.startPos,Globals.endPos)
+#	for til in bpp:
+#		tilemapLayer.set_cell(Vector2i(til[1],til[0]),3,START)
 		
 
 
@@ -160,7 +160,7 @@ func chooseStartandEnd(deadEnds):
 	maze[end[0]][end[1]] = 2
 	maze[start[0]][start[1]] = 3
 	var startingTile = Vector2i(start[1],start[0])
-	var endingTile = Vector2i(end[0],end[1])
+	var _endingTile = Vector2i(end[1],end[0])
 	Globals.startPosTile = tilemapLayer.map_to_local(startingTile)
 	Globals.startPos = start
 	Globals.endPos = end
@@ -184,7 +184,7 @@ func shortestPathBFS(start,end):
 			while selectedNode != null:
 				solution.insert(0,selectedNode)
 				selectedNode = parent[selectedNode]
-			print(solution)
+			#print(solution)
 			return solution
 
 		var possibleDirs = [
