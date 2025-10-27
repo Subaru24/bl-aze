@@ -58,8 +58,8 @@ script = ExtResource("7_sww8e")
 scale = Vector2(0.203125, 0.203125)
 texture = ExtResource("6_g4w1m")
 
-[node name="VertCollisionBox" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_sww8e")
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(2, 2)
+
+[node name="VertCollisionBox" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_sww8e")

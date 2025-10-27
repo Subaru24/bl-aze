@@ -8,9 +8,8 @@ const WALL = Vector2i(1,0)
 const END = Vector2i(2,0)
 const START = Vector2i(3,0)
 
-var rowSize = 20
-var colSize = 20
-var cellSize = 20
+var rowSize : int
+var colSize : int
 
 
 
@@ -37,9 +36,12 @@ var direction = [
 
 
 func _ready() -> void:
+	var coords = checkLevel()
+	var startRow = coords[0] 
+	var startCol = coords[1] 
 	mazeInit()
-	maze[1][1] = 0
-	generateMaze(1,1)
+	maze[startRow][startCol] = 0
+	generateMaze(startRow,startCol)
 	deadEnd()
 	_draw()
 	#shortestPathBFS(Globals.startPos,Globals.endPos)
@@ -209,5 +211,32 @@ func shortestPathBFS(start,end):
 
 	#print(costs)
 				
-	
+func checkLevel():
+	var levelNumber = Globals.levelNum
+	if 1 <= levelNumber <= 5:
+		var coords = [1,1]
+		rowSize = 20
+		colSize = 20
+		return coords
+	elif 6 <= levelNumber <= 10:
+		var coords = [-2,-2]
+		rowSize = 25
+		colSize = 25
+		return coords
+	elif 11 <= levelNumber <= 15:
+		var coords = [1,1]
+		rowSize = 30
+		colSize = 30
+		return coords
+	elif 16 <= levelNumber <= 20:
+		var coords = [-2,-2]
+		rowSize = 35
+		colSize = 35
+		return coords
+	elif levelNumber > 20:
+		get_tree().change_scene_to_file("res://Scenes/Round-End.tscn")
+		
+
+
+
 	
