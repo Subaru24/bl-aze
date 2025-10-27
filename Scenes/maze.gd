@@ -43,7 +43,7 @@ func _ready() -> void:
 	deadEnd()
 	_draw()
 	#shortestPathBFS(Globals.startPos,Globals.endPos)
-	#displayMaze()
+	displayMaze()
 
 
 
@@ -115,7 +115,7 @@ func deadEnd():
 	var deadEnds = []
 	for row in range(rowSize):
 		for col in range(colSize):
-			if maze[row][col] == 1:
+			if maze[row][col] == 1:  #Skips cell if it's a wall
 				continue
 
 			var neighbour = 0
@@ -131,10 +131,10 @@ func deadEnd():
 				var dirCol = dir[1]
 				var newRow = row + dirRow
 				var newCol = col + dirCol
-				if (0 <= newRow and newRow < len(maze) and 0 <= newCol and newCol < len(maze[0]) and maze[newRow][newCol] == 0):
+				if (0 <= newRow and newRow < len(maze) and 0 <= newCol and newCol < len(maze[0]) and maze[newRow][newCol] == 0): #Checks the bounds of the maze
 					neighbour+=1
 
-			if neighbour == 1:
+			if neighbour == 1:  #If there is only one neighbour, it's a dead end
 				deadEnds.append([row,col])
 	#print(deadEnds)
 	chooseStartandEnd(deadEnds)
@@ -143,6 +143,7 @@ func chooseStartandEnd(deadEnds):
 	var pickEnds = []
 	var start = deadEnds.pick_random()
 	var arrPos = deadEnds.find(start)
+	# var poppedVal = deadEnds.pop_at(arrPos)
 	var high = len(deadEnds) - 1
 	var low = 0
 	var mid = len(deadEnds) / 2
@@ -157,8 +158,8 @@ func chooseStartandEnd(deadEnds):
 			pickEnds.append(deadEnds[low])
 			low += 1
 	var end = pickEnds.pick_random()
-	maze[end[0]][end[1]] = 2
-	maze[start[0]][start[1]] = 3
+#	maze[end[0]][end[1]] = 2
+#	maze[start[0]][start[1]] = 3
 	var startingTile = Vector2i(start[1],start[0])
 	var _endingTile = Vector2i(end[1],end[0])
 	Globals.startPosTile = tilemapLayer.map_to_local(startingTile)

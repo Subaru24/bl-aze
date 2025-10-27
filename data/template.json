@@ -1,0 +1,19 @@
+{
+  "scoreData": [
+    {
+    "playerName":"test1",
+      "points": 300,
+      "timeTaken": "00:06:30.00",
+      "date": "2025-01-12T14:00:30"
+    },
+    {
+    "playerName":"test2",
+      "points": 1500,
+      "timeTaken": "00:03:30.00",
+      "date": "2025-01-21T15:30:30"
+    },
+  ]
+
+
+
+}
