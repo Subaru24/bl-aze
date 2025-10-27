@@ -160,8 +160,8 @@ func chooseStartandEnd(deadEnds):
 			pickEnds.append(deadEnds[low])
 			low += 1
 	var end = pickEnds.pick_random()
-#	maze[end[0]][end[1]] = 2
-#	maze[start[0]][start[1]] = 3
+	maze[end[0]][end[1]] = 2
+	maze[start[0]][start[1]] = 3
 	var startingTile = Vector2i(start[1],start[0])
 	var _endingTile = Vector2i(end[1],end[0])
 	Globals.startPosTile = tilemapLayer.map_to_local(startingTile)
@@ -213,22 +213,22 @@ func shortestPathBFS(start,end):
 				
 func checkLevel():
 	var levelNumber = Globals.levelNum
-	if 1 <= levelNumber <= 5:
+	if levelNumber >= 1 and levelNumber <= 5:
 		var coords = [1,1]
 		rowSize = 20
 		colSize = 20
 		return coords
-	elif 6 <= levelNumber <= 10:
+	elif levelNumber >= 6 and levelNumber <= 10:
 		var coords = [-2,-2]
 		rowSize = 25
 		colSize = 25
 		return coords
-	elif 11 <= levelNumber <= 15:
+	elif levelNumber >= 11 and levelNumber <= 15:
 		var coords = [1,1]
 		rowSize = 30
 		colSize = 30
 		return coords
-	elif 16 <= levelNumber <= 20:
+	elif levelNumber >= 16 and levelNumber <= 20:
 		var coords = [-2,-2]
 		rowSize = 35
 		colSize = 35
