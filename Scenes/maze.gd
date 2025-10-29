@@ -163,11 +163,13 @@ func chooseStartandEnd(deadEnds):
 	maze[end[0]][end[1]] = 2
 	maze[start[0]][start[1]] = 3
 	var startingTile = Vector2i(start[1],start[0])
-	var _endingTile = Vector2i(end[1],end[0])
+	var endingTile = Vector2i(end[1],end[0])
 	Globals.startPosTile = tilemapLayer.map_to_local(startingTile)
 	Globals.startPos = start
 	Globals.endPos = end
-#	Globals.endPos = tilemapLayer.map_to_local(endingTile)
+	var endPosTile = tilemapLayer.map_to_local(endingTile)
+	$Area2D.global_position = tilemapLayer.to_global(endPosTile)
+	
 
 
 func shortestPathBFS(start,end):
@@ -240,3 +242,8 @@ func checkLevel():
 
 
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://Scenes/Level-End.tscn")
