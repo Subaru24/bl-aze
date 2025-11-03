@@ -6,4 +6,4 @@ var endPos
 var endPosTile: Vector2
 
 
-var levelNum : int = 20
+var levelNum : int = 6

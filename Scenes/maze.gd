@@ -138,27 +138,19 @@ func deadEnd():
 
 			if neighbour == 1:  #If there is only one neighbour, it's a dead end
 				deadEnds.append([row,col])
-	#print(deadEnds)
+	print(deadEnds)
 	chooseStartandEnd(deadEnds)
 
 func chooseStartandEnd(deadEnds):
-	var pickEnds = []
+	var pickEnds = 0
 	var start = deadEnds.pick_random()
 	var arrPos = deadEnds.find(start)
 	# var poppedVal = deadEnds.pop_at(arrPos)
-	var high = len(deadEnds) - 1
-	var low = 0
 	var mid = len(deadEnds) / 2
 	if arrPos > mid:
-		high = 5
-		while high >= 0:
-			pickEnds.append(deadEnds[high])
-			high -= 1
+		pickEnds = deadEnds.slice(0,6)
 	elif arrPos <= mid:
-		low = -5
-		while low <= 0:
-			pickEnds.append(deadEnds[low])
-			low += 1
+		pickEnds = deadEnds.slice(-5,len(deadEnds))
 	var end = pickEnds.pick_random()
 	maze[end[0]][end[1]] = 2
 	maze[start[0]][start[1]] = 3

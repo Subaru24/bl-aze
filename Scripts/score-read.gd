@@ -1,11 +1,50 @@
 extends Control
 
 var jsonPath = "res://data/template.json"
+var csvPath = "res://data/template.csv"
 
 
 func _ready() -> void:
 	#theInfo(null)
-	sortPoints()
+	loadDataCSV()
+	writeDataCSV()
+
+func loadDataCSV():
+	var scoreList = []
+	var file = FileAccess.open(csvPath,FileAccess.READ)
+	if file == null:
+		print(" File not loaded :( ")
+		return scoreList
+	while not file.eof_reached():
+		var line = file.get_line()
+		scoreList.append(line.split(",")) # Splits elements by comma
+	file.close()
+	for line in scoreList:
+		print(line)
+
+
+func writeDataCSV():
+	var player = "test3"
+	var points = 2000
+	var time = "00:05:45:00"
+	var date = Time.get_datetime_string_from_system()
+	var newData = [player,points,time,date]
+	newData = PackedStringArray(newData)
+	var file = FileAccess.open(csvPath,FileAccess.READ_WRITE) # READ_WRITE so I'll be able to append
+	if file == null:
+		print(" File not loaded :( ")
+		return null
+	file.seek_end()
+	file.store_csv_line(newData)
+	file.close()
+		
+		
+	
+	
+	
+
+
+
 
 func loadData():
 	var file = FileAccess.open(jsonPath,FileAccess.READ)

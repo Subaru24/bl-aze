@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://do082ta14ex11"
+
+[deps]
+
+files=["res://data/template.Points.translation", "res://data/template.Time.translation", "res://data/template.Date.translation"]
+
+source_file="res://data/template.csv"
+dest_files=["res://data/template.Points.translation", "res://data/template.Time.translation", "res://data/template.Date.translation"]
+
+[params]
+
+compress=true
+delimiter=0
