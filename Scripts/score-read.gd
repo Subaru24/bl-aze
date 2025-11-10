@@ -7,29 +7,69 @@ var csvPath = "res://data/template.csv"
 func _ready() -> void:
 	#theInfo(null)
 	loadDataCSV()
-	writeDataCSV()
+	sortPointsCSV()
+	#writeDataCSV()
+
+
+
+# The function that loads the data of the CSV in order to put in a table format of sorts
+
 
 func loadDataCSV():
 	var scoreList = []
-	var file = FileAccess.open(csvPath,FileAccess.READ)
+	var file = FileAccess.open(csvPath, FileAccess.READ)
 	if file == null:
-		print(" File not loaded :( ")
+		print("File not loaded :(")
 		return scoreList
+	
 	while not file.eof_reached():
-		var line = file.get_line()
-		scoreList.append(line.split(",")) # Splits elements by comma
+		var line = file.get_line().strip_edges()
+		if line == "":
+			continue
+		scoreList.append(line.split(","))
+	
 	file.close()
-	for line in scoreList:
-		print(line)
+	return scoreList
 
+
+func display(arg = null):
+	var data = arg if arg != null else loadDataCSV()
+	var header = ["Player","Points","Time","Date"]
+	print("\t".join(header))
+	for line in data:
+		if len(line) == 4:
+			var lineStr = "\t".join(line)
+			print(lineStr)
+	return data
+
+
+func sortPointsCSV():
+	var data = loadDataCSV()
+	data.sort_custom(func(a, b): return int(a[1]) > int(b[1]))
+	display(data)
+
+
+
+
+#func sortDateCSV():
+#	if a[3] > b[3]:
+#		return true
+#	else:
+#		return false
+#	
+
+# The function that can write data to the CSV for storage
 
 func writeDataCSV():
+	# Test Data to be used
 	var player = "test3"
 	var points = 2000
 	var time = "00:05:45:00"
 	var date = Time.get_datetime_string_from_system()
+
+	
 	var newData = [player,points,time,date]
-	newData = PackedStringArray(newData)
+	newData = PackedStringArray(newData) #Packed String Array makes it into a suited format for a CSV
 	var file = FileAccess.open(csvPath,FileAccess.READ_WRITE) # READ_WRITE so I'll be able to append
 	if file == null:
 		print(" File not loaded :( ")

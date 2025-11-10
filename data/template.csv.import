@@ -6,10 +6,10 @@ uid="uid://do082ta14ex11"
 
 [deps]
 
-files=["res://data/template.Points.translation", "res://data/template.Time.translation", "res://data/template.Date.translation"]
+files=["res://data/template.300.translation", "res://data/template.00:06:30.00.translation", "res://data/template.2025.translation"]
 
 source_file="res://data/template.csv"
-dest_files=["res://data/template.Points.translation", "res://data/template.Time.translation", "res://data/template.Date.translation"]
+dest_files=["res://data/template.300.translation", "res://data/template.00:06:30.00.translation", "res://data/template.2025.translation"]
 
 [params]
 
