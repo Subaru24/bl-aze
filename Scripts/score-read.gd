@@ -7,7 +7,7 @@ var csvPath = "res://data/template.csv"
 func _ready() -> void:
 	#theInfo(null)
 	loadDataCSV()
-	sortPointsCSV()
+	sortTimeCSV()
 	#writeDataCSV()
 
 
@@ -33,9 +33,11 @@ func loadDataCSV():
 
 # Displays the table 
 func display(arg):
-	var data = arg if arg != null else loadDataCSV() # Load the order of the data from the parameter if something is being passed in
+	var data = arg if arg != null else loadDataCSV() 
+	# Load the order of the data from the parameter if something is being passed in
 	
-	var header = ["Player","Points","Time","Date"] # Header field in script now so it's not affected by the sorting method
+	var header = ["Player","Points","Time","Date"] 
+	# Header field in script now so it's not affected by the sorting method
 	print("\t".join(header))
 	for line in data:
 		if len(line) == 4:
@@ -46,15 +48,20 @@ func display(arg):
 
 func sortPointsCSV():
 	var data = loadDataCSV()
-	data.sort_custom(func(a, b): return int(a[1]) > int(b[1])) # e.g 1500 > 300, returns true and swaps them around, does this with the rest
-	display(data)
+	data.sort_custom(func(a, b): return int(a[1]) > int(b[1])) 
+	# e.g 1500 > 300, returns true and swaps them around, does this with the rest
+	
+	display(data) 
 
 func sortTimeCSV():
 	var data = loadDataCSV()
-	data.sort_custom(func(a, b): return int(a[2]) > int(b[2]))
+	data.sort_custom(func(a, b): return int(a[2]) < int(b[2]))
 	display(data)
 
-
+func sortDateCSV():
+	var data = loadDataCSV()
+	data.sort_custom(func(a, b): return int(a[3]) > int(b[3]))
+	display(data)
 #func sortDateCSV():
 #	if a[3] > b[3]:
 #		return true
