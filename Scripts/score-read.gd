@@ -31,10 +31,11 @@ func loadDataCSV():
 	file.close()
 	return scoreList
 
-
-func display(arg = null):
-	var data = arg if arg != null else loadDataCSV()
-	var header = ["Player","Points","Time","Date"]
+# Displays the table 
+func display(arg):
+	var data = arg if arg != null else loadDataCSV() # Load the order of the data from the parameter if something is being passed in
+	
+	var header = ["Player","Points","Time","Date"] # Header field in script now so it's not affected by the sorting method
 	print("\t".join(header))
 	for line in data:
 		if len(line) == 4:
@@ -45,10 +46,13 @@ func display(arg = null):
 
 func sortPointsCSV():
 	var data = loadDataCSV()
-	data.sort_custom(func(a, b): return int(a[1]) > int(b[1]))
+	data.sort_custom(func(a, b): return int(a[1]) > int(b[1])) # e.g 1500 > 300, returns true and swaps them around, does this with the rest
 	display(data)
 
-
+func sortTimeCSV():
+	var data = loadDataCSV()
+	data.sort_custom(func(a, b): return int(a[2]) > int(b[2]))
+	display(data)
 
 
 #func sortDateCSV():
