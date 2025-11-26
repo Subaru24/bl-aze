@@ -148,7 +148,7 @@ func chooseStartandEnd(deadEnds):
 	# var poppedVal = deadEnds.pop_at(arrPos)
 	var mid = len(deadEnds) / 2
 	if arrPos > mid:
-		pickEnds = deadEnds.slice(0,6)
+		pickEnds = deadEnds.slice(0,6) # Splices list from index 0 to 5
 	elif arrPos <= mid:
 		pickEnds = deadEnds.slice(-5,len(deadEnds))
 	var end = pickEnds.pick_random()
@@ -213,7 +213,7 @@ func checkLevel():
 		colSize = 20
 		return coords
 	elif levelNumber >= 6 and levelNumber <= 10:
-		var coords = [-2,-2]
+		var coords = [12,12]
 		rowSize = 25
 		colSize = 25
 		return coords
