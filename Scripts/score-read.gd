@@ -5,10 +5,9 @@ var csvPath = "res://data/template.csv"
 
 
 func _ready() -> void:
-	#theInfo(null)
-	loadDataCSV()
-	sortTimeCSV()
-	#writeDataCSV()
+	#sortTimeCSV()
+	writeDataCSV()
+	display(null)
 
 
 
@@ -56,18 +55,14 @@ func sortPointsCSV():
 func sortTimeCSV():
 	var data = loadDataCSV()
 	data.sort_custom(func(a, b): return int(a[2]) < int(b[2]))
+	# Less than is used as it should go quickest to slower time (ascending order)
 	display(data)
 
 func sortDateCSV():
 	var data = loadDataCSV()
 	data.sort_custom(func(a, b): return int(a[3]) > int(b[3]))
 	display(data)
-#func sortDateCSV():
-#	if a[3] > b[3]:
-#		return true
-#	else:
-#		return false
-#	
+
 
 # The function that can write data to the CSV for storage
 
@@ -76,16 +71,20 @@ func writeDataCSV():
 	var player = "test3"
 	var points = 2000
 	var time = "00:05:45:00"
-	var date = Time.get_datetime_string_from_system()
+	var date = Time.get_datetime_string_from_system() # Get the current date and time
 
 	
-	var newData = [player,points,time,date]
-	newData = PackedStringArray(newData) #Packed String Array makes it into a suited format for a CSV
-	var file = FileAccess.open(csvPath,FileAccess.READ_WRITE) # READ_WRITE so I'll be able to append
+	var newData = PackedStringArray([player,points,time,date])
+	print(newData)
+	#Packed String Array makes it into a suited format for a CSV
+	
+	var file = FileAccess.open(csvPath,FileAccess.READ_WRITE) 
+	# READ_WRITE so I'll be able to append
+	
 	if file == null:
 		print(" File not loaded :( ")
 		return null
-	file.seek_end()
+	file.seek_end() # So it appends to the end of the file
 	file.store_csv_line(newData)
 	file.close()
 		
@@ -93,38 +92,3 @@ func writeDataCSV():
 	
 	
 	
-
-
-
-
-func loadData():
-	var file = FileAccess.open(jsonPath,FileAccess.READ)
-	var content = file.get_as_text()
-	print(content)
-	var info = JSON.parse_string(content)
-	return info
-
-func theInfo(sorter):
-	if sorter == null:
-		var data = loadData()
-		for entry in data["scoreData"]:
-			print(entry["playerName"] + "		" + str(entry["points"]) + "		"  + entry["timeTaken"] + "		"  + entry["date"])
-	else:
-		for entry in sorter:
-			print(entry["playerName"] + "		" + str(entry["points"]) + "		"  + entry["timeTaken"] + "		"  + entry["date"])
-
-func sortDate():
-	var data = loadData()
-	var score = data["scoreData"]
-	score.sort_custom(func (a,b): return a["date"] > b["date"])
-	theInfo(score)
-
-func sortPoints():
-	var data = loadData()
-	var score = data["scoreData"]
-	score.sort_custom(func (a,b): return a["points"] > b["points"])
-	theInfo(score)
-
-		
-			
-		
