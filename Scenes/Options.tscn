@@ -181,6 +181,11 @@ toggle_mode = true
 texture_normal = ExtResource("4_cbhj7")
 texture_pressed = ExtResource("5_q4at1")
 
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="20" to="." method="_on_20_pressed"]
 [connection signal="pressed" from="40" to="." method="_on_40_pressed"]
 [connection signal="pressed" from="60" to="." method="_on_60_pressed"]

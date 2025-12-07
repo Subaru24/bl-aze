@@ -11,10 +11,12 @@ extends Control
 #AudioServer.get_bus_index("Master")
 @onready var master = AudioServer.get_bus_index("Master") #Able to use the "Master" volume index
 
-var toggleMinimap : bool
 
 const USERPATH = "user://user-options.cfg"
 # user:// -> $HOME/.local/share/godot/app_userdata/'ProjectMaze'
+
+@onready var toggleMinimap = $Minimap
+
 
 func _ready() -> void:
 	#print(Time.get_datetime_string_from_system())
@@ -68,13 +70,6 @@ func _on_100_pressed() -> void:
 	AudioServer.set_bus_volume_linear(master, 1)
 	print(str(AudioServer.get_bus_volume_linear(master) * 100) + "%")
 
-func _on_check_button_toggled(toggleMinimap: bool) -> void:
-	if toggleMinimap == true:
-		print("on")
-	else:
-		print("off")
-
-
 func _on_back_pressed() -> void:
 	saveOptions()
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
@@ -85,7 +80,7 @@ func saveOptions():
 	# Gets the current volume (from 0 - 1), 
 	# converts it to a 0 - 100 number and removes the decimal
 	options.set_value("User","Volume",volInt)
-	options.set_value("User","Minimap",$Minimap.button_pressed)
+	options.set_value("User","Minimap",toggleMinimap.button_pressed)
 	options.save(USERPATH) # Saves to config file
 
 func loadOptions():
@@ -98,9 +93,6 @@ func loadOptions():
 	call(volCall)
 	# calls the function with the corresponding name 
 	var mmap =  options.get_value("User","Minimap", true)
-	toggleMinimap = mmap
-	$Minimap.button_pressed = mmap
+	toggleMinimap.button_pressed = mmap
 
 	
-
-
