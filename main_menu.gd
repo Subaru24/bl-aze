@@ -26,4 +26,3 @@ func _on_score_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit() # Closes the program
-
