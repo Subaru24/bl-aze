@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnt1wmo0d86sx"]
+[gd_scene load_steps=8 format=3 uid="uid://cnt1wmo0d86sx"]
 
 [ext_resource type="Script" uid="uid://do86mby8asr7w" path="res://Scenes/options-menu.gd" id="1_5hy3q"]
 [ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="1_qqnya"]
@@ -9,11 +9,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6wc4"]
 font = ExtResource("3_6f4k2")
-font_size = 130
-
-[sub_resource type="Theme" id="Theme_a6wc4"]
-default_base_scale = 2.0
-default_font_size = 35
+font_size = 90
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -103,13 +99,13 @@ offset_bottom = 40.0
 
 [node name="Variables" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 98.0
-offset_top = 164.0
-offset_right = 2931.0
-offset_bottom = 1368.0
+offset_left = -4.0
+offset_top = 100.0
+offset_right = 2829.0
+offset_bottom = 1304.0
 columns = 2
 
-[node name="Label" type="Label" parent="Variables"]
+[node name="VolLabel" type="Label" parent="Variables"]
 layout_mode = 2
 text = "Volume"
 label_settings = SubResource("LabelSettings_a6wc4")
@@ -154,14 +150,10 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="CheckButton" type="CheckButton" parent="Variables"]
+[node name="TMLabel" type="Label" parent="Variables"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-size_flags_stretch_ratio = 3.05
-theme = SubResource("Theme_a6wc4")
-button_pressed = true
 text = "Toggle Minimap"
+label_settings = SubResource("LabelSettings_a6wc4")
 
 [node name="Minimap" type="TextureButton" parent="Variables"]
 layout_mode = 2
@@ -188,6 +180,5 @@ offset_bottom = 40.0
 [connection signal="pressed" from="60" to="." method="_on_60_pressed"]
 [connection signal="pressed" from="80" to="." method="_on_80_pressed"]
 [connection signal="pressed" from="100" to="." method="_on_100_pressed"]
-[connection signal="toggled" from="Variables/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="toggled" from="Variables/Minimap" to="." method="_on_minimap_toggled"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

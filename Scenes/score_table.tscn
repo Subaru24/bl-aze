@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4w5qi1amgyxs"]
+
+[ext_resource type="Script" uid="uid://b58tdnb7vuk0n" path="res://Scripts/score-read.gd" id="1_m43nq"]
+
+[node name="ScoreTable" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m43nq")
