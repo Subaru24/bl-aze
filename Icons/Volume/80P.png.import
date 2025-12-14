@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blkrgh4ukcyi"
-path="res://.godot/imported/20Normal.svg-2802e11ed85427cc1852785b99c418c9.ctex"
+uid="uid://uvrnssd7mtcc"
+path="res://.godot/imported/80P.png-2ece885bf622e3b65b82ece9e3f56373.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/Vol/20Normal.svg"
-dest_files=["res://.godot/imported/20Normal.svg-2802e11ed85427cc1852785b99c418c9.ctex"]
+source_file="res://Icons/Volume/80P.png"
+dest_files=["res://.godot/imported/80P.png-2ece885bf622e3b65b82ece9e3f56373.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
