@@ -1,6 +1,7 @@
 extends Control
 
 # ColorRect Nodes
+@onready var mute = $"Variables/VolGrid/Mute"
 @onready var twentyBar = $"Variables/VolGrid/20"
 @onready var fourtyBar = $"Variables/VolGrid/40"
 @onready var sixtyBar = $"Variables/VolGrid/60"
@@ -24,6 +25,13 @@ func _ready() -> void:
 
 func checkVol(rectArr):
 	var index = 0
+	if not rectArr:
+		mute.button_pressed = true
+		rectArr = [false,false,false,false,false]
+	else:
+		mute.button_pressed = false
+
+
 	for rect in rectArr:
 		if rect == false:
 			nodeArr[index].button_pressed = false
@@ -96,3 +104,9 @@ func loadOptions():
 	toggleMinimap.button_pressed = mmap
 
 	
+
+
+func _on_0_pressed() -> void:
+	var locRectArr = false
+	checkVol(locRectArr)
+	AudioServer.set_bus_volume_linear(master, 0)
