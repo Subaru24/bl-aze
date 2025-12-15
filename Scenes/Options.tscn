@@ -1,11 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnt1wmo0d86sx"]
+[gd_scene load_steps=18 format=3 uid="uid://cnt1wmo0d86sx"]
 
 [ext_resource type="Script" uid="uid://do86mby8asr7w" path="res://Scenes/options-menu.gd" id="1_5hy3q"]
 [ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="1_qqnya"]
 [ext_resource type="Texture2D" uid="uid://bjymhcbs444sq" path="res://Icons/back-button-svgrepo-com.svg" id="3_5hy3q"]
 [ext_resource type="FontFile" uid="uid://b3ksr0uc67xqg" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="3_6f4k2"]
 [ext_resource type="Texture2D" uid="uid://jvpwoyesow68" path="res://Icons/Placeholder Button.png" id="4_cbhj7"]
+[ext_resource type="Texture2D" uid="uid://b7u8o2jpdsjwo" path="res://Icons/Volume/20N.svg" id="4_jpdgi"]
+[ext_resource type="Texture2D" uid="uid://carnpmhyppqb2" path="res://Icons/Volume/20P.png" id="5_mrk6e"]
 [ext_resource type="Texture2D" uid="uid://du1djsb5pixu" path="res://Icons/Placeholder Button Pressed.png" id="5_q4at1"]
+[ext_resource type="Texture2D" uid="uid://dkhkij5w418p3" path="res://Icons/Volume/40N.svg" id="6_oa66i"]
+[ext_resource type="Texture2D" uid="uid://cep6gcumnwmcs" path="res://Icons/Volume/40P.png" id="7_viydq"]
+[ext_resource type="Texture2D" uid="uid://bn8d4eaxysfgf" path="res://Icons/Volume/60N.svg" id="8_1k6i7"]
+[ext_resource type="Texture2D" uid="uid://d0hx5tfyj3qjm" path="res://Icons/Volume/60P.png" id="9_yfx2d"]
+[ext_resource type="Texture2D" uid="uid://b5impxcs7oin4" path="res://Icons/Volume/80N.svg" id="10_cdyqt"]
+[ext_resource type="Texture2D" uid="uid://uvrnssd7mtcc" path="res://Icons/Volume/80P.png" id="11_k0hbd"]
+[ext_resource type="Texture2D" uid="uid://bgigvf4jvtskx" path="res://Icons/Volume/100N.svg" id="12_g1sm3"]
+[ext_resource type="Texture2D" uid="uid://dtujtg8x7drrv" path="res://Icons/Volume/100P.png" id="13_bscdg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6wc4"]
 font = ExtResource("3_6f4k2")
@@ -19,61 +29,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5hy3q")
-
-[node name="20" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-top_level = true
-layout_mode = 0
-offset_left = 578.0
-offset_top = 300.0
-offset_right = 681.0
-offset_bottom = 365.0
-text = "fdsfsdfdsfds"
-icon_alignment = 1
-
-[node name="40" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-top_level = true
-layout_mode = 0
-offset_left = 683.0
-offset_top = 284.0
-offset_right = 786.0
-offset_bottom = 365.0
-text = "fdsfsdfdsfds"
-icon_alignment = 1
-
-[node name="60" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-top_level = true
-layout_mode = 0
-offset_left = 786.0
-offset_top = 250.0
-offset_right = 889.0
-offset_bottom = 365.0
-text = "fdsfsdfdsfds"
-icon_alignment = 1
-
-[node name="80" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-top_level = true
-layout_mode = 0
-offset_left = 891.48
-offset_top = 209.0
-offset_right = 994.48
-offset_bottom = 365.0
-text = "fdsfsdfdsfds"
-icon_alignment = 1
-
-[node name="100" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-top_level = true
-layout_mode = 0
-offset_left = 996.0
-offset_top = 165.0
-offset_right = 1099.0
-offset_bottom = 365.0
-text = "fdsfsdfdsfds"
-icon_alignment = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_qqnya")
@@ -92,17 +47,19 @@ offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Variables" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = -4.0
-offset_top = 100.0
-offset_right = 2829.0
-offset_bottom = 1304.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -313.0
+offset_right = 410.0
+offset_bottom = 301.0
+theme_override_constants/h_separation = 74
+theme_override_constants/v_separation = 44
 columns = 2
 
 [node name="VolLabel" type="Label" parent="Variables"]
@@ -115,48 +72,54 @@ layout_mode = 2
 size_flags_vertical = 8
 columns = 6
 
-[node name="20Rect" type="ColorRect" parent="Variables/VolGrid"]
-custom_minimum_size = Vector2(100, 60)
+[node name="20" type="TextureButton" parent="Variables/VolGrid"]
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
-mouse_filter = 2
+toggle_mode = true
+texture_normal = ExtResource("4_jpdgi")
+texture_pressed = ExtResource("5_mrk6e")
 
-[node name="40Rect" type="ColorRect" parent="Variables/VolGrid"]
-custom_minimum_size = Vector2(100, 75)
+[node name="40" type="TextureButton" parent="Variables/VolGrid"]
 layout_mode = 2
-size_flags_horizontal = 2
 size_flags_vertical = 8
-mouse_filter = 2
+toggle_mode = true
+texture_normal = ExtResource("6_oa66i")
+texture_pressed = ExtResource("7_viydq")
 
-[node name="60Rect" type="ColorRect" parent="Variables/VolGrid"]
-custom_minimum_size = Vector2(100, 112.5)
+[node name="60" type="TextureButton" parent="Variables/VolGrid"]
 layout_mode = 2
-size_flags_horizontal = 6
 size_flags_vertical = 8
-mouse_filter = 2
+toggle_mode = true
+texture_normal = ExtResource("8_1k6i7")
+texture_pressed = ExtResource("9_yfx2d")
 
-[node name="80Rect" type="ColorRect" parent="Variables/VolGrid"]
-custom_minimum_size = Vector2(100, 150)
+[node name="80" type="TextureButton" parent="Variables/VolGrid"]
 layout_mode = 2
-size_flags_horizontal = 2
 size_flags_vertical = 8
-mouse_filter = 2
+toggle_mode = true
+texture_normal = ExtResource("10_cdyqt")
+texture_pressed = ExtResource("11_k0hbd")
 
-[node name="100Rect" type="ColorRect" parent="Variables/VolGrid"]
-custom_minimum_size = Vector2(100, 200)
+[node name="100" type="TextureButton" parent="Variables/VolGrid"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-mouse_filter = 2
+size_flags_vertical = 8
+toggle_mode = true
+texture_normal = ExtResource("12_g1sm3")
+texture_pressed = ExtResource("13_bscdg")
 
 [node name="TMLabel" type="Label" parent="Variables"]
 layout_mode = 2
-text = "Toggle Minimap"
+text = "Toggle
+Minimap"
 label_settings = SubResource("LabelSettings_a6wc4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Minimap" type="TextureButton" parent="Variables"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("4_cbhj7")
 texture_pressed = ExtResource("5_q4at1")
@@ -170,15 +133,10 @@ offset_bottom = 802.0
 scale = Vector2(0.085, 0.085)
 texture_normal = ExtResource("3_5hy3q")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[connection signal="pressed" from="20" to="." method="_on_20_pressed"]
-[connection signal="pressed" from="40" to="." method="_on_40_pressed"]
-[connection signal="pressed" from="60" to="." method="_on_60_pressed"]
-[connection signal="pressed" from="80" to="." method="_on_80_pressed"]
-[connection signal="pressed" from="100" to="." method="_on_100_pressed"]
+[connection signal="pressed" from="Variables/VolGrid/20" to="." method="_on_20_pressed"]
+[connection signal="pressed" from="Variables/VolGrid/40" to="." method="_on_40_pressed"]
+[connection signal="pressed" from="Variables/VolGrid/60" to="." method="_on_60_pressed"]
+[connection signal="pressed" from="Variables/VolGrid/80" to="." method="_on_80_pressed"]
+[connection signal="pressed" from="Variables/VolGrid/100" to="." method="_on_100_pressed"]
 [connection signal="toggled" from="Variables/Minimap" to="." method="_on_minimap_toggled"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

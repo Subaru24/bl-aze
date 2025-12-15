@@ -1,11 +1,11 @@
 extends Control
 
 # ColorRect Nodes
-@onready var twentyBar = $"Variables/VolGrid/20Rect"
-@onready var fourtyBar = $"Variables/VolGrid/40Rect"
-@onready var sixtyBar = $"Variables/VolGrid/60Rect"
-@onready var eightyBar = $"Variables/VolGrid/80Rect"
-@onready var hundredBar = $"Variables/VolGrid/100Rect"
+@onready var twentyBar = $"Variables/VolGrid/20"
+@onready var fourtyBar = $"Variables/VolGrid/40"
+@onready var sixtyBar = $"Variables/VolGrid/60"
+@onready var eightyBar = $"Variables/VolGrid/80"
+@onready var hundredBar = $"Variables/VolGrid/100"
 # Volume Array
 @onready var nodeArr = [twentyBar,fourtyBar,sixtyBar,eightyBar,hundredBar]
 #AudioServer.get_bus_index("Master")
@@ -15,7 +15,7 @@ extends Control
 const USERPATH = "user://user-options.cfg"
 # user:// -> $HOME/.local/share/godot/app_userdata/'ProjectMaze'
 
-@onready var toggleMinimap = $Minimap
+@onready var toggleMinimap = $Variables/Minimap
 
 
 func _ready() -> void:
@@ -26,9 +26,9 @@ func checkVol(rectArr):
 	var index = 0
 	for rect in rectArr:
 		if rect == false:
-			nodeArr[index].self_modulate =  Color (1,1,1,0.5)
+			nodeArr[index].button_pressed = false
 		else:
-			nodeArr[index].self_modulate =  Color (1,1,1,1)
+			nodeArr[index].button_pressed = true
 		index += 1
 	
 func _process(_delta):
