@@ -95,12 +95,16 @@ func loadOptions():
 	var options = ConfigFile.new()
 	options.load(USERPATH)
 	var vol = options.get_value("User","Volume", 100)
+	if typeof(vol) != TYPE_INT or vol < 0 or vol > 100:
+		vol = 100
 	# 100 = default value if not loaded correctly
 	var volCall = "_on_%s_pressed" % vol 
 	# the %s is replaced by whatever the "vol" is 
 	call(volCall)
 	# calls the function with the corresponding name 
 	var mmap =  options.get_value("User","Minimap", true)
+	if typeof(mmap) != TYPE_BOOL:
+		mmap = true
 	toggleMinimap.button_pressed = mmap
 
 	
