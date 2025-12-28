@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx1pjxlsp45n2"]
+[gd_scene load_steps=14 format=3 uid="uid://cx1pjxlsp45n2"]
 
 [ext_resource type="Script" uid="uid://coy23diec47kf" path="res://main_menu.gd" id="1_tt5f1"]
 [ext_resource type="Script" uid="uid://csss2b11b03rn" path="res://Scenes/start.gd" id="2_853f1"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://b7pmi25512jtq" path="res://Icons/OptionsFocused.svg" id="7_rrcx7"]
 [ext_resource type="Texture2D" uid="uid://dxtoafq2cvx8v" path="res://Icons/ScoreFocused.svg" id="9_fh7cp"]
 [ext_resource type="Texture2D" uid="uid://8aq26g27tq0p" path="res://Icons/QuitFocused.svg" id="11_8e205"]
+[ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="12_rrcx7"]
+[ext_resource type="Texture2D" uid="uid://cm6y5co5dshqb" path="res://Icons/Title.png" id="13_fh7cp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -89,6 +91,15 @@ layout_mode = 2
 focus_neighbor_right = NodePath("../Start")
 texture_normal = ExtResource("7_loo7a")
 texture_focused = ExtResource("11_8e205")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_rrcx7")
+autoplay = true
+
+[node name="Blaze" type="Sprite2D" parent="."]
+position = Vector2(168.53513, -535.9972)
+scale = Vector2(0.72983015, 0.72983015)
+texture = ExtResource("13_fh7cp")
 
 [connection signal="pressed" from="HBoxContainerd/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainerd/Options" to="." method="_on_options_pressed"]

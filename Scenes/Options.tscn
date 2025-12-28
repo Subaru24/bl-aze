@@ -1,13 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://cnt1wmo0d86sx"]
+[gd_scene load_steps=21 format=3 uid="uid://cnt1wmo0d86sx"]
 
 [ext_resource type="Script" uid="uid://do86mby8asr7w" path="res://Scenes/options-menu.gd" id="1_5hy3q"]
 [ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="1_qqnya"]
-[ext_resource type="Texture2D" uid="uid://bjymhcbs444sq" path="res://Icons/back-button-svgrepo-com.svg" id="3_5hy3q"]
 [ext_resource type="FontFile" uid="uid://b3ksr0uc67xqg" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="3_6f4k2"]
-[ext_resource type="Texture2D" uid="uid://jvpwoyesow68" path="res://Icons/Placeholder Button.png" id="4_cbhj7"]
 [ext_resource type="Texture2D" uid="uid://b7u8o2jpdsjwo" path="res://Icons/Volume/20N.svg" id="4_jpdgi"]
 [ext_resource type="Texture2D" uid="uid://carnpmhyppqb2" path="res://Icons/Volume/20P.png" id="5_mrk6e"]
-[ext_resource type="Texture2D" uid="uid://du1djsb5pixu" path="res://Icons/Placeholder Button Pressed.png" id="5_q4at1"]
 [ext_resource type="Texture2D" uid="uid://dkhkij5w418p3" path="res://Icons/Volume/40N.svg" id="6_oa66i"]
 [ext_resource type="Texture2D" uid="uid://cep6gcumnwmcs" path="res://Icons/Volume/40P.png" id="7_viydq"]
 [ext_resource type="Texture2D" uid="uid://bn8d4eaxysfgf" path="res://Icons/Volume/60N.svg" id="8_1k6i7"]
@@ -18,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dtujtg8x7drrv" path="res://Icons/Volume/100P.png" id="13_bscdg"]
 [ext_resource type="Texture2D" uid="uid://ceis0143v1abm" path="res://Icons/Volume/MuteN.svg" id="14_oa66i"]
 [ext_resource type="Texture2D" uid="uid://dnk8jxqaxkn2a" path="res://Icons/Volume/MuteP.svg" id="15_viydq"]
+[ext_resource type="Texture2D" uid="uid://dknhxhhd363l1" path="res://Icons/Minimap-Off.svg" id="16_viydq"]
+[ext_resource type="Texture2D" uid="uid://c1y7d55iahd4p" path="res://Icons/Minimap-On.svg" id="17_1k6i7"]
+[ext_resource type="Texture2D" uid="uid://chiup6kll43jw" path="res://Icons/back.png" id="18_viydq"]
+[ext_resource type="Texture2D" uid="uid://tkn62xo4c3c2" path="res://Icons/OptionsTitle.png" id="19_1k6i7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6wc4"]
 font = ExtResource("3_6f4k2")
@@ -56,10 +57,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -374.0
-offset_top = -313.0
-offset_right = 410.0
-offset_bottom = 301.0
+offset_left = -337.0
+offset_top = -204.0
+offset_right = 521.0
+offset_bottom = 410.0
+scale = Vector2(0.77, 0.77)
 theme_override_constants/h_separation = 74
 theme_override_constants/v_separation = 44
 columns = 2
@@ -130,17 +132,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-texture_normal = ExtResource("4_cbhj7")
-texture_pressed = ExtResource("5_q4at1")
+texture_normal = ExtResource("16_viydq")
+texture_pressed = ExtResource("17_1k6i7")
 
 [node name="Back" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 802.0
-offset_bottom = 802.0
+offset_left = 10.0000305
+offset_top = 2.0000153
+offset_right = 1111.0
+offset_bottom = 1002.0
 scale = Vector2(0.085, 0.085)
-texture_normal = ExtResource("3_5hy3q")
+texture_normal = ExtResource("18_viydq")
+
+[node name="Options" type="Sprite2D" parent="."]
+position = Vector2(945, 70)
+scale = Vector2(0.4414557, 0.4414557)
+texture = ExtResource("19_1k6i7")
 
 [connection signal="pressed" from="Variables/VolGrid/20" to="." method="_on_20_pressed"]
 [connection signal="pressed" from="Variables/VolGrid/40" to="." method="_on_40_pressed"]
