@@ -106,6 +106,8 @@ func _draw():
 		for cols in range(colSize):
 			var tile = WALL if maze[rows][cols] == 1 else PATH if maze[rows][cols] == 0 else END if maze[rows][cols] == 2 else START
 			tilemapLayer.set_cell(Vector2i(cols,rows),3,tile)
+
+
 #	var bpp = shortestPathBFS(Globals.startPos,Globals.endPos)
 #	for til in bpp:
 #		tilemapLayer.set_cell(Vector2i(til[1],til[0]),3,START)
@@ -165,10 +167,10 @@ func chooseStartandEnd(deadEnds):
 
 
 func shortestPathBFS(start,end):
-	var solution = []
-	var queue = []
-	var visited = {}
-	var parent = {}
+	var solution = [] # List for the path 
+	var queue = [] # Queue for subsequent nodes
+	var visited = {} # Check if node is visited (Dict for O(1) lookup)
+	var parent = {} # Key = child, Value = parent
 	
 
 	queue.append(start)
