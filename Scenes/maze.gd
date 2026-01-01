@@ -157,10 +157,10 @@ func chooseStartandEnd(deadEnds):
 	var startingTile = Vector2i(start[1],start[0])
 	var endingTile = Vector2i(end[1],end[0])
 	Globals.startPosTile = tilemapLayer.map_to_local(startingTile)
-	Globals.startPos = start
-	Globals.endPos = end
-	var endPosTile = tilemapLayer.map_to_local(endingTile)
-	$Area2D.global_position = tilemapLayer.to_global(endPosTile)
+	#Globals.startPos = start
+	#Globals.endPos = end
+	Globals.endPosTile = tilemapLayer.map_to_local(endingTile)
+	$Area2D.global_position = tilemapLayer.to_global(Globals.endPosTile)
 	
 
 
