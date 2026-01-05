@@ -95,7 +95,7 @@ func loadOptions():
 	var options = ConfigFile.new()
 	options.load(USERPATH)
 	var vol = options.get_value("User","Volume", 100)
-	if typeof(vol) != TYPE_INT or vol < 0 or vol > 100:
+	if typeof(vol) != TYPE_INT or vol < 0 or vol > 100: # If not a desired value, set to default (100)
 		vol = 100
 	# 100 = default value if not loaded correctly
 	var volCall = "_on_%s_pressed" % vol 

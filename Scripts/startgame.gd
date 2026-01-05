@@ -1,7 +1,9 @@
 extends Control
 
-const USERPATH = "user://user-options.cfg"
-@onready var map = $Sprite2D
+const USERPATH = "user://user-options.cfg" # Path of config file
+@onready var map = $Sprite2D # The minimap
+
+
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Maze.tscn")
