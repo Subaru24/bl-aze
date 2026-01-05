@@ -1,0 +1,27 @@
+extends Node
+
+var timeElasped := 0
+@onready var pauseMenu = $Control/PauseMenu
+
+func  _ready() -> void:
+	$Control/Timer.start()
+	
+	pauseMenu.hide()
+
+func _on_timer_timeout():
+	timeElasped += 1
+	var minutes = int(timeElasped / 60)
+	var seconds = timeElasped % 60 # Used mod instead because it made more sense
+	$Control/Stopwatch.text = '%02d:%02d' % [minutes, seconds]
+	# %02d means add exactly 2 digits, add a 0 if needed with these variables
+
+func onPause():
+	pauseMenu.show()
+	get_tree().paused = true
+	
+func onUnpause():
+	pauseMenu.hide()
+	get_tree().paused = false
+	
+	
+	

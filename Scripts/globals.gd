@@ -7,5 +7,7 @@ var endPos
 var startPosTile: Vector2
 var endPosTile: Vector2
 
+var prevScene
+
 
 var levelNum : int = 1

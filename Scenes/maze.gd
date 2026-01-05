@@ -3,7 +3,7 @@ extends Node2D
 @onready var maze = []
 @onready var tilemapLayer = $MazeTile
 
-var timeElasped := 0
+
 
 const PATH = Vector2i(0,0)
 const WALL = Vector2i(1,0)
@@ -48,8 +48,7 @@ func _ready() -> void:
 	_draw()
 	#shortestPathBFS(Globals.startPos,Globals.endPos)
 	displayMaze()
-	$Timer.start()
-
+	
 
 
 # Generate the grid of the Maze
@@ -250,12 +249,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		get_tree().change_scene_to_file("res://Scenes/Level-End.tscn")
 
 
-func _on_timer_timeout():
-	timeElasped += 1
-	var minutes = int(timeElasped / 60)
-	var seconds = timeElasped % 60 # Used mod instead because it made more sense
-	$Stopwatch.text = '%02d:%02d' % [minutes, seconds]
-	# %02d means add exactly 2 digits, add a 0 if needed with these variables
+
 	
 	
 
