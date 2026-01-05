@@ -3,6 +3,8 @@ extends Node2D
 @onready var maze = []
 @onready var tilemapLayer = $MazeTile
 
+var timeElasped := 0
+
 const PATH = Vector2i(0,0)
 const WALL = Vector2i(1,0)
 const END = Vector2i(2,0)
@@ -46,6 +48,7 @@ func _ready() -> void:
 	_draw()
 	#shortestPathBFS(Globals.startPos,Globals.endPos)
 	displayMaze()
+	$Timer.start()
 
 
 
@@ -156,13 +159,17 @@ func chooseStartandEnd(deadEnds):
 	var end = pickEnds.pick_random()
 	maze[end[0]][end[1]] = 2
 	maze[start[0]][start[1]] = 3
+	# Setting the coords of the points to Vector2i
 	var startingTile = Vector2i(start[1],start[0])
 	var endingTile = Vector2i(end[1],end[0])
+	
+	# Sets the the position to the globals  
 	Globals.startPosTile = tilemapLayer.map_to_local(startingTile)
-	#Globals.startPos = start
-	#Globals.endPos = end
-	Globals.endPosTile = tilemapLayer.map_to_local(endingTile)
-	$Area2D.global_position = tilemapLayer.to_global(Globals.endPosTile)
+	Globals.startPos = start
+	Globals.endPos = end
+	# Defining the Area's position to the end tile
+	var endPosTile = tilemapLayer.map_to_local(endingTile)
+	$Area2D.global_position = tilemapLayer.to_global(endPosTile)
 	
 
 
@@ -175,13 +182,13 @@ func shortestPathBFS(start,end):
 
 	queue.append(start)
 	visited[start] = true
-	parent[start] = null
+	parent[start] = null # null as it's the root node
 	
 	while len(queue) != 0:
 		var selectedNode = queue.pop_front()
 		if selectedNode == end:
 			while selectedNode != null:
-				solution.insert(0,selectedNode)
+				solution.insert(0,selectedNode) # Adds nodes backwards
 				selectedNode = parent[selectedNode]
 			#print(solution)
 			return solution
@@ -241,3 +248,15 @@ func checkLevel():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		get_tree().change_scene_to_file("res://Scenes/Level-End.tscn")
+
+
+func _on_timer_timeout():
+	timeElasped += 1
+	var minutes = int(timeElasped / 60)
+	var seconds = timeElasped % 60 # Used mod instead because it made more sense
+	$Stopwatch.text = '%02d:%02d' % [minutes, seconds]
+	# %02d means add exactly 2 digits, add a 0 if needed with these variables
+	
+	
+
+	

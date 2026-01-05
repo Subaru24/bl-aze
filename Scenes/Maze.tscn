@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://didmwhk1y8yo2"]
+[gd_scene load_steps=18 format=3 uid="uid://didmwhk1y8yo2"]
 
 [ext_resource type="Script" uid="uid://c80ivwbcj002w" path="res://Scenes/maze.gd" id="1_v2hyu"]
 [ext_resource type="Texture2D" uid="uid://565cojm8hhd5" path="res://assests/mazetile.png" id="2_yuvd5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cm6cc6n155mut" path="res://assests/merge-mazetile.png" id="5_sww8e"]
 [ext_resource type="Texture2D" uid="uid://4r7uyaashegg" path="res://assests/player-sprite.png" id="6_g4w1m"]
 [ext_resource type="Script" uid="uid://bqrivflwpfyix" path="res://Scripts/player.gd" id="7_sww8e"]
+[ext_resource type="FontFile" uid="uid://6y0xugw5jye2" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="8_7yhxv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hdl3g"]
 texture = ExtResource("2_yuvd5")
@@ -36,16 +37,22 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_7hfkg"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_rgewu")
 sources/0 = SubResource("TileSetAtlasSource_hdl3g")
 sources/1 = SubResource("TileSetAtlasSource_7yhxv")
 sources/2 = SubResource("TileSetAtlasSource_14cn6")
-sources/3 = SubResource("TileSetAtlasSource_rgewu")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sww8e"]
 size = Vector2(24, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yhxv"]
 size = Vector2(8, 8)
+
+[sub_resource type="Theme" id="Theme_14cn6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rgewu"]
+font = ExtResource("8_7yhxv")
+font_size = 128
 
 [node name="Maze" type="Node2D"]
 script = ExtResource("1_v2hyu")
@@ -73,6 +80,16 @@ debug_color = Color(0.89058584, 0.32573465, 0, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_7yhxv")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Stopwatch" type="Label" parent="."]
+offset_left = -411.0
+offset_top = -241.0
+offset_right = -217.0
+offset_bottom = -123.0
+theme = SubResource("Theme_14cn6")
+label_settings = SubResource("LabelSettings_rgewu")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
