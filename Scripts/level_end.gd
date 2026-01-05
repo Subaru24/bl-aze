@@ -4,8 +4,8 @@ extends Control
 
 func _ready() -> void:
 	var label = $CompleteMessage
-	label.text = "Level " + str(Globals.levelNum) + " Completed"
-	pass
+	label.text = "Level Completed"
+	#label.text = "Level " + str(Globals.levelNum) + " Completed"
 
 func _on_texture_button_pressed() -> void:
 	Globals.levelNum += 1

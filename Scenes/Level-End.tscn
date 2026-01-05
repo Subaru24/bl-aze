@@ -12,7 +12,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_av8ko")
 
+[node name="CompleteMessage" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51000005
@@ -27,10 +33,5 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("1_pgr88")
-
-[node name="CompleteMessage" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -18,7 +18,7 @@ func _physics_process(_delta):
 	
 	if playerDir:
 			velocity = playerDir * speed
-	#else:
-	#	velocity = velocity.move_toward(Vector2.ZERO,speed)
+#	else:
+#		velocity = velocity.move_toward(Vector2.ZERO,speed)
 	move_and_slide()
 	

@@ -1,9 +1,11 @@
 extends Node
 
-var startPos
-var startPosTile: Vector2
+# Positions for text maze
+var startPos 
 var endPos
+# Positions for tile maze
+var startPosTile: Vector2
 var endPosTile: Vector2
 
 
-var levelNum : int = 20
+var levelNum : int = 1
