@@ -18,6 +18,7 @@ func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn") # Go to the Main Game
 
 func _on_options_pressed() -> void:
+	Globals.prevScene = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_file("res://Scenes/Options.tscn") # Opens Options
 
 

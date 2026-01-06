@@ -155,7 +155,7 @@ shortcut = SubResource("Shortcut_5l1b6")
 texture_normal = ExtResource("10_rgewu")
 
 [node name="PauseMenu" type="Control" parent="HUD/Control"]
-process_mode = 2
+process_mode = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -218,3 +218,4 @@ texture_focused = ExtResource("14_7m4uh")
 [connection signal="timeout" from="HUD/Control/Timer" to="HUD" method="_on_timer_timeout"]
 [connection signal="pressed" from="HUD/Control/Pause" to="HUD" method="onPause"]
 [connection signal="pressed" from="HUD/Control/PauseMenu/VBoxContainer/Continue" to="HUD" method="onUnpause"]
+[connection signal="pressed" from="HUD/Control/PauseMenu/VBoxContainer/Options" to="HUD" method="onOptionsPressed"]

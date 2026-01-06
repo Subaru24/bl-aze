@@ -23,5 +23,12 @@ func onUnpause():
 	pauseMenu.hide()
 	get_tree().paused = false
 	
+func onOptionsPressed():
+	Globals.prevScene = get_tree().current_scene.scene_file_path
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/Options.tscn")
+	
+	
+	
 	
 	
