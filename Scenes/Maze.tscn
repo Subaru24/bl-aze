@@ -106,7 +106,7 @@ debug_color = Color(0.89058584, 0.32573465, 0, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_7yhxv")
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." groups=["hud"]]
 script = ExtResource("8_14cn6")
 
 [node name="Control" type="Control" parent="HUD"]
@@ -154,14 +154,12 @@ grow_horizontal = 0
 shortcut = SubResource("Shortcut_5l1b6")
 texture_normal = ExtResource("10_rgewu")
 
-[node name="PauseMenu" type="Control" parent="HUD/Control"]
-process_mode = 3
+[node name="PauseMenu" type="Control" parent="HUD/Control" groups=["hud"]]
+process_mode = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 
