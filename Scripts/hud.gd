@@ -8,6 +8,7 @@ var isPaused = Globals.pauseState
 
 func  _ready() -> void:
 	$Control/Timer.start()
+	$Control/Level.text = "LEVEL:" + str(Globals.levelNum)
 	if Globals.pauseState:
 		onPause()
 	else:

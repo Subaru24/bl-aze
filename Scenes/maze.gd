@@ -39,8 +39,6 @@ var direction = [
 func _ready() -> void:
 	var startRow = coords[0]
 	var startCol = coords[1]	
-	print(rowSize)
-	print(colSize)
 	mazeInit()
 	print(maze)
 	maze[startRow][startCol] = 0
@@ -150,6 +148,7 @@ func deadEnd():
 func chooseStartandEnd(deadEnds):
 	var pickEnds = 0
 	var start = deadEnds.pick_random()
+	var end = 0 
 	var arrPos = deadEnds.find(start)
 	# var poppedVal = deadEnds.pop_at(arrPos)
 	var mid = len(deadEnds) / 2
@@ -157,7 +156,15 @@ func chooseStartandEnd(deadEnds):
 		pickEnds = deadEnds.slice(0,6) # Splices list from index 0 to 5
 	elif arrPos <= mid:
 		pickEnds = deadEnds.slice(-5,len(deadEnds))
-	var end = pickEnds.pick_random()
+	# Emulating a do-until loop 
+	while true:   
+		end = pickEnds.pick_random()
+		if end != start:
+			break
+		else:
+			var i = pickEnds.find(end)
+			pickEnds.remove_at(i)
+	
 	maze[end[0]][end[1]] = 2
 	maze[start[0]][start[1]] = 3
 	# Setting the coords of the points to Vector2i

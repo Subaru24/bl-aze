@@ -11,6 +11,7 @@ var endPosTile: Vector2
 
 var prevScene = "res://Scenes/MainMenu.tscn"
 var pauseState := false
+
 var levelNum: int = 1
 
 var rowSize: int = 20

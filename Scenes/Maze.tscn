@@ -62,6 +62,8 @@ size = Vector2(8, 8)
 [sub_resource type="LabelSettings" id="LabelSettings_rgewu"]
 font = ExtResource("8_7yhxv")
 font_size = 128
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="InputEventAction" id="InputEventAction_32p0j"]
 action = &"togglePause"
@@ -114,10 +116,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Stopwatch" type="Label" parent="HUD/Control"]
-visible = false
 layout_mode = 1
 offset_right = 328.0
 offset_bottom = 154.0
+scale = Vector2(0.575, 0.575)
 size_flags_horizontal = 0
 theme = SubResource("Theme_14cn6")
 text = "00:00"
@@ -125,6 +127,17 @@ label_settings = SubResource("LabelSettings_rgewu")
 
 [node name="Timer" type="Timer" parent="HUD/Control"]
 autostart = true
+
+[node name="Level" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 534.0
+offset_right = 862.0
+offset_bottom = 154.0
+scale = Vector2(0.575, 0.575)
+size_flags_horizontal = 0
+theme = SubResource("Theme_14cn6")
+text = "LEVEL: 1"
+label_settings = SubResource("LabelSettings_rgewu")
 
 [node name="Pause" type="TextureButton" parent="HUD/Control"]
 layout_mode = 1
@@ -139,6 +152,7 @@ texture_normal = ExtResource("10_rgewu")
 
 [node name="PauseMenu" type="Control" parent="HUD/Control" groups=["hud"]]
 process_mode = 2
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

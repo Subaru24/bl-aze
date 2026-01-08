@@ -6,6 +6,7 @@ const USERPATH = "user://user-options.cfg" # Path of config file
 
 
 func _on_start_pressed() -> void:
+	Globals.levelNum = 1
 	get_tree().change_scene_to_file("res://Scenes/Maze.tscn")
 	
 
