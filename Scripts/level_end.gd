@@ -9,5 +9,5 @@ func _ready() -> void:
 
 func _on_texture_button_pressed() -> void:
 	Globals.levelNum += 1
-	get_tree().change_scene_to_file("res://Scenes/Maze.tscn")
+	get_tree().change_scene_to_file("res://Scenes/LevelManage.tscn")
 	

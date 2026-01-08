@@ -31,11 +31,11 @@ anchor_left = 0.5
 anchor_top = 0.71000004
 anchor_right = 0.50200003
 anchor_bottom = 0.71000004
-offset_left = -70.00003
-offset_top = -30.080048
-offset_right = 2327.696
-offset_bottom = 969.92
-scale = Vector2(0.06, 0.06)
+offset_left = -277.0
+offset_top = -139.80011
+offset_right = 2120.696
+offset_bottom = 860.19995
+scale = Vector2(2.385, 2.385)
 texture_normal = ExtResource("2_j5yw3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

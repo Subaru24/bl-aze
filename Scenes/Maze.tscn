@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b062bwftnlww2" path="res://Icons/StartFocused.svg" id="12_7m4uh"]
 [ext_resource type="Texture2D" uid="uid://bkp1upl6v843t" path="res://Icons/Quit.svg" id="13_l2rk3"]
 [ext_resource type="Texture2D" uid="uid://8aq26g27tq0p" path="res://Icons/QuitFocused.svg" id="14_7m4uh"]
+[ext_resource type="PackedScene" uid="uid://cnt1wmo0d86sx" path="res://Scenes/Options.tscn" id="17_7m4uh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hdl3g"]
 texture = ExtResource("2_yuvd5")
@@ -55,11 +56,6 @@ size = Vector2(24, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yhxv"]
 size = Vector2(8, 8)
-
-[sub_resource type="LabelSettings" id="LabelSettings_7yhxv"]
-font_size = 42
-outline_size = 10
-outline_color = Color(0.23392546, 0.23392546, 0.23392543, 1)
 
 [sub_resource type="Theme" id="Theme_14cn6"]
 
@@ -116,19 +112,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="HUD/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -48.0
-offset_right = 48.0
-offset_bottom = 58.0
-grow_horizontal = 2
-text = "Test "
-label_settings = SubResource("LabelSettings_7yhxv")
 
 [node name="Stopwatch" type="Label" parent="HUD/Control"]
 visible = false
@@ -211,6 +194,10 @@ layout_mode = 2
 focus_neighbor_right = NodePath("../Continue")
 texture_normal = ExtResource("13_l2rk3")
 texture_focused = ExtResource("14_7m4uh")
+
+[node name="Options" parent="HUD/Control/PauseMenu" instance=ExtResource("17_7m4uh")]
+visible = false
+layout_mode = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="HUD/Control/Timer" to="HUD" method="_on_timer_timeout"]

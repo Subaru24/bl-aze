@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var maze = []
+var maze = []
 @onready var tilemapLayer = $MazeTile
 
 
@@ -10,10 +10,9 @@ const WALL = Vector2i(1,0)
 const END = Vector2i(2,0)
 const START = Vector2i(3,0)
 
-var rowSize : int
-var colSize : int
-
-
+var rowSize = Globals.rowSize
+var colSize = Globals.colSize
+var coords = Globals.coords
 
 
 #var cellWallsText = {
@@ -38,10 +37,12 @@ var direction = [
 
 
 func _ready() -> void:
-	var coords = checkLevel()
-	var startRow = coords[0] 
-	var startCol = coords[1] 
+	var startRow = coords[0]
+	var startCol = coords[1]	
+	print(rowSize)
+	print(colSize)
 	mazeInit()
+	print(maze)
 	maze[startRow][startCol] = 0
 	generateMaze(startRow,startCol)
 	deadEnd()
@@ -53,6 +54,7 @@ func _ready() -> void:
 
 # Generate the grid of the Maze
 func mazeInit(): 
+	maze.clear()
 	for r in range(rowSize):
 		var row = []
 		for c in range(colSize):
@@ -213,30 +215,6 @@ func shortestPathBFS(start,end):
 
 	#print(costs)
 				
-func checkLevel():
-	var levelNumber = Globals.levelNum
-	if levelNumber >= 1 and levelNumber <= 5:
-		var coords = [1,1]
-		rowSize = 20
-		colSize = 20
-		return coords
-	elif levelNumber >= 6 and levelNumber <= 10:
-		var coords = [12,12]
-		rowSize = 25
-		colSize = 25
-		return coords
-	elif levelNumber >= 11 and levelNumber <= 15:
-		var coords = [1,1]
-		rowSize = 30
-		colSize = 30
-		return coords
-	elif levelNumber >= 16 and levelNumber <= 20:
-		var coords = [-2,-2]
-		rowSize = 35
-		colSize = 35
-		return coords
-	elif levelNumber > 20:
-		get_tree().change_scene_to_file("res://Scenes/Round-End.tscn")
 		
 
 

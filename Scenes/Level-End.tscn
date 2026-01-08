@@ -18,20 +18,19 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="TextureButton" type="TextureButton" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51000005
 anchor_top = 0.5
 anchor_right = 0.51000005
 anchor_bottom = 0.5
-offset_left = -120.5202
-offset_top = -54.00003
-offset_right = 2279.48
-offset_bottom = 946.0
+offset_left = -83.20007
+offset_top = -44.0
+offset_right = 2316.8003
+offset_bottom = 913.8948
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.665, 0.665)
 texture_normal = ExtResource("1_pgr88")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

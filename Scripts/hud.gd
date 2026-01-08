@@ -2,15 +2,18 @@ extends Node
 
 var timeElasped := 0
 @onready var pauseMenu = $Control/PauseMenu
+@onready var pauseOptions = $Control/PauseMenu/Options
 var isPaused = Globals.pauseState
 
 
 func  _ready() -> void:
 	$Control/Timer.start()
-	if isPaused:
+	if Globals.pauseState:
 		onPause()
 	else:
-		pauseMenu.hide()
+		onUnpause()
+
+	pauseOptions.hide()
 
 func _on_timer_timeout():
 	timeElasped += 1
@@ -18,6 +21,7 @@ func _on_timer_timeout():
 	var seconds = timeElasped % 60 # Used mod instead because it made more sense
 	$Control/Stopwatch.text = '%02d:%02d' % [minutes, seconds]
 	# %02d means add exactly 2 digits, add a 0 if needed with these variables
+
 
 func onPause():
 	pauseMenu.show()
@@ -30,8 +34,12 @@ func onUnpause():
 	Globals.pauseState = false
 	
 func onOptionsPressed():
-	Globals.pushSceneStack("res://Scenes/Options.tscn")
+	Globals.prevScene = get_tree().current_scene.scene_file_path
+	#print(Globals.prevScene)
+	pauseOptions.show()
+	pauseMenu.hide()
 	
+	#Globals.pushSceneStack("res://Scenes/Options.tscn")
 	
 	
 	
