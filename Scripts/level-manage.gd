@@ -16,7 +16,7 @@ func checkLevel(levelNumber):
 		Globals.colSize = 20
 		return true
 	elif levelNumber <= 10:
-		Globals.coords = [-1,-1] # On levels 6-10 & 16-20 have the maze generated in reverse
+		Globals.coords = [12,12] # On levels 6-10 & 16-20 have the maze generated in reverse
 		Globals.rowSize = 25
 		Globals.colSize = 25
 		return true

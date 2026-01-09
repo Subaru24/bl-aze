@@ -12,7 +12,7 @@ var endPosTile: Vector2
 var prevScene = "res://Scenes/MainMenu.tscn"
 var pauseState := false
 
-var levelNum: int = 1
+var levelNum: int = 5
 
 var rowSize: int = 20
 var colSize: int = 20
@@ -20,6 +20,8 @@ var colSize: int = 20
 var coords = [1,1]
 
 var sceneStack: Array[Node] = []
+
+const USERPATH = "user://user-options.cfg"
 
 
 func pushSceneStack(newScenePath):
@@ -48,4 +50,10 @@ func popSceneStack():
 		#scene.hide()
 	#else: 
 		#get_tree().change_scene_to_file(previousScene)
-		
+func loadMinimap():
+	var options = ConfigFile.new()
+	options.load(USERPATH)
+	var mmap =  options.get_value("User","Minimap", true)
+	if typeof(mmap) != TYPE_BOOL:
+		mmap = true
+	return mmap

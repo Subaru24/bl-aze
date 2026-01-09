@@ -2,7 +2,6 @@ extends Node
 
 var timeElasped := 0
 @onready var pauseMenu = $Control/PauseMenu
-@onready var pauseOptions = $Control/PauseMenu/Options
 var isPaused = Globals.pauseState
 
 
@@ -14,7 +13,7 @@ func  _ready() -> void:
 	else:
 		onUnpause()
 
-	pauseOptions.hide()
+
 
 func _on_timer_timeout():
 	timeElasped += 1
@@ -34,11 +33,10 @@ func onUnpause():
 	get_tree().paused = false
 	Globals.pauseState = false
 	
-func onOptionsPressed():
-	Globals.prevScene = get_tree().current_scene.scene_file_path
-	#print(Globals.prevScene)
-	pauseOptions.show()
-	pauseMenu.hide()
+#func onOptionsPressed():
+	#Globals.prevScene = get_tree().current_scene.scene_file_path
+	##print(Globals.prevScene)
+	#pauseMenu.hide()
 	
 	#Globals.pushSceneStack("res://Scenes/Options.tscn")
 	

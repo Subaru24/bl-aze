@@ -37,6 +37,11 @@ var direction = [
 
 
 func _ready() -> void:
+	print(rowSize)
+	print(colSize)
+	print(coords)
+
+
 	var startRow = coords[0]
 	var startCol = coords[1]	
 	mazeInit()
