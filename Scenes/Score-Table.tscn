@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=3 uid="uid://cbxxlaqu40308"]
+
+[ext_resource type="Script" uid="uid://b58tdnb7vuk0n" path="res://Scripts/score-read.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://6y0xugw5jye2" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2"]
+[ext_resource type="LabelSettings" uid="uid://cqm5qbwlcbaag" path="res://fonts/Font.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://drxyqoet0crd0" path="res://Icons/ScoreButtons/SRecent.svg" id="4"]
+[ext_resource type="Texture2D" uid="uid://krr6nb4yxbaf" path="res://Icons/ScoreButtons/SRecentPressed.svg" id="5"]
+[ext_resource type="Texture2D" uid="uid://c3mh6yr0e1wmk" path="res://Icons/ScoreButtons/SPoints.svg" id="6"]
+[ext_resource type="Texture2D" uid="uid://bl7bbqdyrf82j" path="res://Icons/ScoreButtons/SPointsPressed.svg" id="7"]
+[ext_resource type="Texture2D" uid="uid://d2xe4lxbc8bp4" path="res://Icons/ScoreButtons/STime.svg" id="8"]
+[ext_resource type="Texture2D" uid="uid://dwgvc8ys0afe6" path="res://Icons/ScoreButtons/STimePressed.svg" id="9"]
+[ext_resource type="Texture2D" uid="uid://dcjjeuxsphr0l" path="res://Icons/ScoreButtons/Refresh.svg" id="10"]
+[ext_resource type="Texture2D" uid="uid://sbviqkb3k525" path="res://Icons/ScoreButtons/RefreshPressed.svg" id="11"]
+
+[sub_resource type="Theme" id="Theme_1aakg"]
+default_font = ExtResource("2")
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_xntbl"]
+
+[node name="ScoreTable" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -689.5
+offset_right = 689.5
+offset_bottom = 120.0
+grow_horizontal = 2
+theme = SubResource("Theme_1aakg")
+theme_override_constants/h_separation = 335
+theme_override_constants/v_separation = 30
+columns = 3
+
+[node name="Name" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Player"
+label_settings = ExtResource("3")
+
+[node name="Points" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Points"
+label_settings = ExtResource("3")
+
+[node name="Time" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Time"
+label_settings = ExtResource("3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.532
+anchor_top = 0.748
+anchor_right = 0.532
+anchor_bottom = 0.748
+offset_left = -735.44
+offset_top = -44.840027
+offset_right = 3354.56
+offset_bottom = 205.15997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.36, 0.36)
+theme = SubResource("Theme_xntbl")
+theme_override_constants/separation = 104
+
+[node name="SRecent" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4")
+texture_pressed = ExtResource("5")
+
+[node name="SPoints" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6")
+texture_pressed = ExtResource("7")
+
+[node name="STime" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8")
+texture_pressed = ExtResource("9")
+
+[node name="Refresh" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 93.0
+offset_top = 750.0
+offset_right = 431.0
+offset_bottom = 1088.0
+scale = Vector2(0.305, 0.305)
+texture_normal = ExtResource("10")
+texture_pressed = ExtResource("11")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="HBoxContainer/SRecent" to="." method="onSRecentPressed"]
+[connection signal="pressed" from="HBoxContainer/SPoints" to="." method="onSPointsPressed"]
+[connection signal="pressed" from="HBoxContainer/STime" to="." method="onSTimePressed"]
+[connection signal="pressed" from="Refresh" to="." method="onRefreshPressed"]

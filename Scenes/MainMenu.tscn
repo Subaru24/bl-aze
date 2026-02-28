@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://cx1pjxlsp45n2"]
+
+[ext_resource type="Script" uid="uid://coy23diec47kf" path="res://main_menu.gd" id="1"]
+[ext_resource type="Script" uid="uid://csss2b11b03rn" path="res://Scenes/start.gd" id="2"]
+[ext_resource type="Script" uid="uid://d03o8gjr7546a" path="res://options.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://oimvy3l8ukxs" path="res://Icons/Start.svg" id="4"]
+[ext_resource type="Texture2D" uid="uid://b062bwftnlww2" path="res://Icons/StartFocused.svg" id="5"]
+[ext_resource type="Texture2D" uid="uid://1hgywjrmuos8" path="res://Icons/Options.svg" id="6"]
+[ext_resource type="Texture2D" uid="uid://b7pmi25512jtq" path="res://Icons/OptionsFocused.svg" id="7"]
+[ext_resource type="Texture2D" uid="uid://dqpo1lpdhgxiy" path="res://Icons/Score.svg" id="8"]
+[ext_resource type="Texture2D" uid="uid://dxtoafq2cvx8v" path="res://Icons/ScoreFocused.svg" id="9"]
+[ext_resource type="Texture2D" uid="uid://bkp1upl6v843t" path="res://Icons/Quit.svg" id="10"]
+[ext_resource type="Texture2D" uid="uid://8aq26g27tq0p" path="res://Icons/QuitFocused.svg" id="11"]
+[ext_resource type="AudioStream" uid="uid://bok2incgoeoqt" path="res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3" id="12"]
+[ext_resource type="Texture2D" uid="uid://cm6y5co5dshqb" path="res://Icons/Title.png" id="13"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -238.0
+offset_top = -198.0
+offset_right = -238.0
+offset_bottom = -198.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.21043, 1.21829)
+size_flags_vertical = 8
+script = ExtResource("1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.315, 2.315)
+theme_override_constants/separation = 87
+
+[node name="Start" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../Quit")
+text = "Start"
+script = ExtResource("2")
+
+[node name="Options" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Options"
+script = ExtResource("3")
+
+[node name="Quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../Start")
+text = "Quit"
+
+[node name="HBoxContainerd" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -228.01813
+offset_top = -19.699741
+offset_right = 3176.982
+offset_bottom = 230.30028
+scale = Vector2(0.25824484, 0.25824484)
+theme_override_constants/separation = 335
+
+[node name="Start" type="TextureButton" parent="HBoxContainerd"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Quit")
+texture_normal = ExtResource("4")
+texture_focused = ExtResource("5")
+
+[node name="Options" type="TextureButton" parent="HBoxContainerd"]
+layout_mode = 2
+texture_normal = ExtResource("6")
+texture_focused = ExtResource("7")
+
+[node name="Score" type="TextureButton" parent="HBoxContainerd"]
+layout_mode = 2
+texture_normal = ExtResource("8")
+texture_focused = ExtResource("9")
+
+[node name="Quit" type="TextureButton" parent="HBoxContainerd"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../Start")
+texture_normal = ExtResource("10")
+texture_focused = ExtResource("11")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12")
+autoplay = true
+
+[node name="Blaze" type="Sprite2D" parent="."]
+position = Vector2(168.53513, -535.9972)
+scale = Vector2(0.72983015, 0.72983015)
+texture = ExtResource("13")
+
+[connection signal="pressed" from="HBoxContainerd/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainerd/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="HBoxContainerd/Score" to="." method="_on_score_pressed"]
+[connection signal="pressed" from="HBoxContainerd/Quit" to="." method="_on_quit_pressed"]

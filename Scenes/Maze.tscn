@@ -1,0 +1,287 @@
+[gd_scene load_steps=31 format=3 uid="uid://didmwhk1y8yo2"]
+
+[ext_resource type="Script" uid="uid://c80ivwbcj002w" path="res://Scenes/maze.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://565cojm8hhd5" path="res://assests/mazetile.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://lyjarmwirf8c" path="res://assests/redtile.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bk7hx03dinv0h" path="res://assests/greentile.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cm6cc6n155mut" path="res://assests/merge-mazetile.png" id="5"]
+[ext_resource type="Script" uid="uid://bqrivflwpfyix" path="res://Scripts/player.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://4r7uyaashegg" path="res://assests/player-sprite.png" id="7"]
+[ext_resource type="Script" uid="uid://8mo4i1sksvb" path="res://Scripts/hud.gd" id="8"]
+[ext_resource type="FontFile" uid="uid://6y0xugw5jye2" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="9"]
+[ext_resource type="Script" uid="uid://djf6vwioas3f1" path="res://Scripts/minimap.gd" id="10"]
+[ext_resource type="Texture2D" uid="uid://b2n45j8rm03x5" path="res://Icons/Placeholder Map.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://oimvy3l8ukxs" path="res://Icons/Start.svg" id="12"]
+[ext_resource type="Texture2D" uid="uid://b062bwftnlww2" path="res://Icons/StartFocused.svg" id="13"]
+[ext_resource type="Texture2D" uid="uid://1hgywjrmuos8" path="res://Icons/Options.svg" id="14"]
+[ext_resource type="Texture2D" uid="uid://b7pmi25512jtq" path="res://Icons/OptionsFocused.svg" id="15"]
+[ext_resource type="Texture2D" uid="uid://bkp1upl6v843t" path="res://Icons/Quit.svg" id="16"]
+[ext_resource type="Texture2D" uid="uid://8aq26g27tq0p" path="res://Icons/QuitFocused.svg" id="17"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hdl3g"]
+texture = ExtResource("2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/script = null
+1:0/0 = 0
+1:0/0/script = null
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yhxv"]
+texture = ExtResource("3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/script = null
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14cn6"]
+texture = ExtResource("4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/script = null
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgewu"]
+texture = ExtResource("5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/script = null
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/script = null
+2:0/0 = 0
+2:0/0/script = null
+3:0/0 = 0
+3:0/0/script = null
+
+[sub_resource type="TileSet" id="TileSet_7hfkg"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_rgewu")
+sources/0 = SubResource("TileSetAtlasSource_hdl3g")
+sources/1 = SubResource("TileSetAtlasSource_7yhxv")
+sources/2 = SubResource("TileSetAtlasSource_14cn6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sww8e"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yhxv"]
+size = Vector2(8, 8)
+
+[sub_resource type="Theme" id="Theme_14cn6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rgewu"]
+font = ExtResource("9")
+font_size = 128
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="InputEventAction" id="InputEventAction_32p0j"]
+action = &"togglePause"
+
+[sub_resource type="Shortcut" id="Shortcut_5l1b6"]
+events = [SubResource("InputEventAction_32p0j")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_l2rk3"]
+action = &"togglePause"
+
+[sub_resource type="Shortcut" id="Shortcut_7m4uh"]
+events = [SubResource("InputEventAction_l2rk3")]
+
+[node name="Maze" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_horizontal_guides_ = [733.0]
+
+[node name="MazeTile" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_7hfkg")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(480, 271)
+motion_mode = 1
+script = ExtResource("6")
+
+[node name="Player" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.203125, 0.203125)
+texture = ExtResource("7")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
+
+[node name="VertCollisionBox" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_sww8e")
+debug_color = Color(0.89058584, 0.32573465, 0, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7yhxv")
+
+[node name="HUD" type="CanvasLayer" parent="." groups=["hud"]]
+script = ExtResource("8")
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stopwatch" type="Label" parent="HUD/Control"]
+layout_mode = 1
+offset_right = 328.0
+offset_bottom = 154.0
+scale = Vector2(0.575, 0.575)
+size_flags_horizontal = 0
+theme = SubResource("Theme_14cn6")
+text = "00:00"
+label_settings = SubResource("LabelSettings_rgewu")
+
+[node name="Timer" type="Timer" parent="HUD/Control"]
+autostart = true
+
+[node name="Points" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 1038.0
+offset_right = 1519.0
+offset_bottom = 154.0
+scale = Vector2(0.575, 0.575)
+size_flags_horizontal = 0
+theme = SubResource("Theme_14cn6")
+text = "POINTS: 0"
+label_settings = SubResource("LabelSettings_rgewu")
+
+[node name="Level" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 534.0
+offset_right = 862.0
+offset_bottom = 154.0
+scale = Vector2(0.575, 0.575)
+size_flags_horizontal = 0
+theme = SubResource("Theme_14cn6")
+text = "LEVEL: 1"
+label_settings = SubResource("LabelSettings_rgewu")
+
+[node name="Minimap" type="SubViewportContainer" parent="HUD/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -345.0
+offset_top = -345.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="HUD/Control/Minimap" node_paths=PackedStringArray("playerNode", "cameraNode")]
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+script = ExtResource("10")
+playerNode = NodePath("../../../../CharacterBody2D")
+cameraNode = NodePath("Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="HUD/Control/Minimap/SubViewport"]
+position = Vector2(3, 2)
+zoom = Vector2(0.3, 0.3)
+
+[node name="Pause" type="TextureButton" parent="HUD/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+shortcut = SubResource("Shortcut_5l1b6")
+texture_normal = ExtResource("11")
+
+[node name="PauseMenu" type="Control" parent="HUD/Control" groups=["hud"]]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause" type="Label" parent="HUD/Control/PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_right = 223.0
+offset_bottom = 154.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_14cn6")
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_rgewu")
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/Control/PauseMenu"]
+
+[node name="Minimap" type="SubViewportContainer" parent="HUD/Control/PauseMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1183.0
+offset_top = -940.0
+offset_right = -671.0
+offset_bottom = -428.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.915, 0.915)
+
+[node name="SubViewport" type="SubViewport" parent="HUD/Control/PauseMenu/Minimap" node_paths=PackedStringArray("playerNode", "cameraNode")]
+handle_input_locally = false
+render_target_update_mode = 0
+script = ExtResource("10")
+playerNode = NodePath("../../../../../CharacterBody2D")
+cameraNode = NodePath("Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="HUD/Control/PauseMenu/Minimap/SubViewport"]
+position = Vector2(3, 2)
+zoom = Vector2(0.85, 0.85)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = 97.99994
+offset_right = 468.0
+offset_bottom = 856.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+
+[node name="Continue" type="TextureButton" parent="HUD/Control/PauseMenu/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Quit")
+shortcut = SubResource("Shortcut_7m4uh")
+texture_normal = ExtResource("12")
+texture_focused = ExtResource("13")
+
+[node name="Options" type="TextureButton" parent="HUD/Control/PauseMenu/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("14")
+texture_focused = ExtResource("15")
+
+[node name="Quit" type="TextureButton" parent="HUD/Control/PauseMenu/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../Continue")
+texture_normal = ExtResource("16")
+texture_focused = ExtResource("17")
+
+[connection signal="tree_exited" from="." to="HUD" method="_on_maze_tree_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="HUD/Control/Timer" to="HUD" method="_on_timer_timeout"]
+[connection signal="pressed" from="HUD/Control/Pause" to="HUD" method="onPause"]
+[connection signal="pressed" from="HUD/Control/PauseMenu/VBoxContainer/Continue" to="HUD" method="onUnpause"]
+[connection signal="pressed" from="HUD/Control/PauseMenu/VBoxContainer/Options" to="HUD" method="onOptionsPressed"]

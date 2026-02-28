@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://do082ta14ex11"
+
+[deps]
+
+files=["res://data/template.00_03_30.00.translation", "res://data/template.00_06_30.00.translation", "res://data/template.1500.translation", "res://data/template.2025.translation", "res://data/template.300.translation", "res://data/template.Date.translation", "res://data/template.Points.translation", "res://data/template.Time.translation"]
+
+source_file="res://data/template.csv"
+dest_files=["res://data/template.00_03_30.00.translation", "res://data/template.00_06_30.00.translation", "res://data/template.1500.translation", "res://data/template.2025.translation", "res://data/template.300.translation", "res://data/template.Date.translation", "res://data/template.Points.translation", "res://data/template.Time.translation"]
+
+[params]
+
+compress=true
+delimiter=0

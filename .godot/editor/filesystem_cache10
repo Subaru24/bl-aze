@@ -1,0 +1,105 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1772016918
+default_bus_layout.tres::AudioBusLayout::7561930407965461756::1772016605::0::1::::<><><>0<>0<><>::
+gdre_export.log::TextFile::-1::1772016606::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::6020435198044834211::1772016605::1772016605::1::::<><><>0<>0<>55b8074c7baace83fea7de5e8f373b2d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main_menu.gd::GDScript::5806719775564199009::1772016605::0::1::::<>Control<><>0<>0<><>::
+options.gd::GDScript::8972695018101097826::1772016605::0::1::::<>Button<><>0<>0<><>::
+::res://addons/::1772016604
+::res://addons/godot-git-plugin/::1772016606
+git_plugin.gdextension::GDExtension::2643443663757017890::1772016604::0::1::::<><><>0<>0<><>::
+::res://assests/::1772016605
+black-tile.png::CompressedTexture2D::7287185575755020339::1772016605::1772016605::1::::<><><>0<>0<>3cf98393cf021cad886c80fdbb57730c<>res://.godot/imported/black-tile.png-46fb275482063bd9d6eacb7e3f069617.ctex::
+greentile.png::CompressedTexture2D::3154836656898325877::1772016605::1772016605::1::::<><><>0<>0<>1252714693a95d9dcbd845486bd49736<>res://.godot/imported/greentile.png-23171c1c69fcc17138b5dddf220fa71e.ctex::
+mazetile.png::CompressedTexture2D::2171486850707377576::1772016604::1772016604::1::::<><><>0<>0<>0c99b927b6ad3ec9d824840fda4c30f5<>res://.godot/imported/mazetile.png-f83ffa964a61b479c60787e89ede7c79.ctex::
+merge-mazetile.png::CompressedTexture2D::5679229856520703163::1772016605::1772016605::1::::<><><>0<>0<>f2629bf43228e3335912004e14c58c9c<>res://.godot/imported/merge-mazetile.png-79b86a74af85372c032b58cfed9d764e.ctex::
+player-sprite.png::CompressedTexture2D::2072550807553317562::1772016605::1772016605::1::::<><><>0<>0<>049999a083ebe70c85c41c21f034e1a9<>res://.godot/imported/player-sprite.png-4bac9bba44ba15a0cf8612f1062bfdf8.ctex::
+redtile.png::CompressedTexture2D::822169711496239552::1772016604::1772016604::1::::<><><>0<>0<>847f11a2faafe144bbd8a430222672eb<>res://.godot/imported/redtile.png-2d3099463dd5543e974dfb6dd8b3f04c.ctex::
+white-tile.png::CompressedTexture2D::3404607876757482843::1772016605::1772016605::1::::<><><>0<>0<>fde56eeed398a8c659d6339abfce7090<>res://.godot/imported/white-tile.png-00864b6b1c3445f3928a1df102417702.ctex::
+::res://data/::1772016606
+template.00_03_30.00.translation::OptimizedTranslation::-1::1772016604::0::1::::<><><>0<>0<><>::
+template.00_06_30.00.translation::OptimizedTranslation::-1::1772016604::0::1::::<><><>0<>0<><>::
+template.300.translation::OptimizedTranslation::1106162876307302981::1772016604::0::1::::<><><>0<>0<><>::
+template.1500.translation::OptimizedTranslation::2022647367184675962::1772016604::0::1::::<><><>0<>0<><>::
+template.2025.translation::OptimizedTranslation::4764101336657107012::1772016604::0::1::::<><><>0<>0<><>::
+template.csv::OptimizedTranslation::8195568182223888666::1772016606::1772016606::1::::<><><>0<>0<>222718cb45ff7d02535cf017532f4599<>res://data/template.00_03_30.00.translation<*>res://data/template.00_06_30.00.translation<*>res://data/template.1500.translation<*>res://data/template.2025.translation<*>res://data/template.300.translation<*>res://data/template.Date.translation<*>res://data/template.Points.translation<*>res://data/template.Time.translation::
+template.Date.translation::OptimizedTranslation::1131892047708503135::1772016604::0::1::::<><><>0<>0<><>::
+template.json::JSON::-1::1772016604::0::1::::<><><>0<>0<><>::
+template.Points.translation::OptimizedTranslation::2836207848314080074::1772016604::0::1::::<><><>0<>0<><>::
+template.Time.translation::OptimizedTranslation::6962414906685263210::1772016604::0::1::::<><><>0<>0<><>::
+::res://fonts/::1772016606
+Font.tres::LabelSettings::5922485568140458766::1772016604::0::1::::<><><>0<>0<><>::uid://6y0xugw5jye2::::res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf
+::res://fonts/Pixelify_Sans/::1772016605
+PixelifySans-VariableFont_wght.ttf::FontFile::2226959277731293163::1772016605::1772016605::1::::<><><>0<>0<>711e2405e1804d04c0fd153a621068e0<>res://.godot/imported/PixelifySans-VariableFont_wght.ttf-133ab79aab0dcd0a5ccd694e67f64b87.fontdata::
+::res://fonts/Pixelify_Sans/static/::1772016605
+PixelifySans-Bold.ttf::FontFile::4462796494942256137::1772016605::1772016605::1::::<><><>0<>0<>d872771a7114ac660f266c1bbe697dfb<>res://.godot/imported/PixelifySans-Bold.ttf-87a83fc8c0b22b443aa6b5543b4b92d4.fontdata::
+PixelifySans-Medium.ttf::FontFile::4373476691578209202::1772016604::1772016604::1::::<><><>0<>0<>cf60a2927df8ab3052a42d109f83f66f<>res://.godot/imported/PixelifySans-Medium.ttf-f732b5e92c65ef8a6a219df895f76f78.fontdata::
+PixelifySans-Regular.ttf::FontFile::3473359212815823222::1772016604::1772016604::1::::<><><>0<>0<>6689329d4a6f9a913d55536d79ca9556<>res://.godot/imported/PixelifySans-Regular.ttf-8b8adac7b107042494e65035786ff5d5.fontdata::
+PixelifySans-SemiBold.ttf::FontFile::6360898152501598893::1772016604::1772016604::1::::<><><>0<>0<>d5a4ac7be6101f6b30b1d67a2a137d5d<>res://.godot/imported/PixelifySans-SemiBold.ttf-9c28b90e753582d161277200aa9b7ccd.fontdata::
+::res://Icons/::1772016606
+back-button-svgrepo-com.svg::CompressedTexture2D::3068406554452629024::1772016606::1772016606::1::::<><><>0<>0<>4b4f33c07bb899ae4a2852277a293078<>res://.godot/imported/back-button-svgrepo-com.svg-206b8bcd326bbeca6f57bb477b38e3d9.ctex::
+back-button.png::CompressedTexture2D::2802254090365588710::1772016604::1772016604::1::::<><><>0<>0<>e13674c40c3373bfe4f2e61c48ddc85a<>res://.godot/imported/back-button.png-96e9edc5dd3557a84d23a36b1fc33070.ctex::
+back-button_Layer 1.svg::CompressedTexture2D::2177759968028274821::1772016604::1772016604::1::::<><><>0<>0<>8d310674989a837746beb73c3be9861c<>res://.godot/imported/back-button_Layer 1.svg-b6e4d2026598d899a911bee8687735b1.ctex::
+back.png::CompressedTexture2D::5281921065836370224::1772016604::1772016604::1::::<><><>0<>0<>43533bf122f31f4a87b3f59304b40fdf<>res://.godot/imported/back.png-219a6312490468c9ccd4cb4afafcd532.ctex::
+back.svg::CompressedTexture2D::7910692395172957027::1772016605::1772016605::1::::<><><>0<>0<>0d18f19c0aff2e36e5c52f22ea25d349<>res://.godot/imported/back.svg-f4b12929d739ba610237382a2b121a68.ctex::
+Minimap-Off.svg::CompressedTexture2D::7888453869123638744::1772016605::1772016605::1::::<><><>0<>0<>dfd51da95c412ebf68c9a88bf1f2c6f4<>res://.godot/imported/Minimap-Off.svg-c8abae7047e76c457b04920559d5f3d4.ctex::
+Minimap-On.svg::CompressedTexture2D::6649246291631120045::1772016604::1772016604::1::::<><><>0<>0<>f8eb0eb9da3fd1e6774a4d940c4d81d4<>res://.godot/imported/Minimap-On.svg-a9b7f7a300db205817ac5661ef597ea3.ctex::
+Options.svg::CompressedTexture2D::1839768910083760765::1772016605::1772016605::1::::<><><>0<>0<>9e780f89f648311ff5070f38a5b6fac8<>res://.godot/imported/Options.svg-16d8e7f38b4c371fdf371b8b75d1a9a0.ctex::
+OptionsFocused.svg::CompressedTexture2D::4664173702558936818::1772016605::1772016605::1::::<><><>0<>0<>2089fe32ac6d540079fad47f8368f42c<>res://.godot/imported/OptionsFocused.svg-66c37ae51369f2f150b58e4204d57074.ctex::
+OptionsTitle.png::CompressedTexture2D::1355077941516145071::1772016606::1772016606::1::::<><><>0<>0<>5e05f10c50be367535b34c0333539ba0<>res://.godot/imported/OptionsTitle.png-9e7307c391348cae61479d7aa86be6d6.ctex::
+Placeholder Button Pressed.png::CompressedTexture2D::253438585791691322::1772016604::1772016604::1::::<><><>0<>0<>1223d7acb0adf45bced7adb09c8e5bb8<>res://.godot/imported/Placeholder Button Pressed.png-e3719e754d5ba06bab02dbc5f1b49d62.ctex::
+Placeholder Button.png::CompressedTexture2D::676002340543531943::1772016605::1772016605::1::::<><><>0<>0<>aa54384c6b2e31bc014ea04da039d423<>res://.godot/imported/Placeholder Button.png-c2bab0b1e65b92af84f1bbc79082033a.ctex::
+Placeholder Map.png::CompressedTexture2D::4310171263808277892::1772016605::1772016605::1::::<><><>0<>0<>4da868a50cd8c6f87c4d92c2f864f4f5<>res://.godot/imported/Placeholder Map.png-b5aca34a4cd83c854d600b00c81a719b.ctex::
+Quit.svg::CompressedTexture2D::3120889950355340983::1772016604::1772016604::1::::<><><>0<>0<>97c3c8d3e7b18b65370325be03a23c08<>res://.godot/imported/Quit.svg-48c380273a49d5390329d3905f08fc7c.ctex::
+QuitFocused.svg::CompressedTexture2D::2317253167137730585::1772016604::1772016604::1::::<><><>0<>0<>f886290f26042ed023f5fdd26dacaaea<>res://.godot/imported/QuitFocused.svg-38ba5bbb38fc6efdad592eaabf6ea973.ctex::
+Score.svg::CompressedTexture2D::8314146285213816900::1772016605::1772016605::1::::<><><>0<>0<>c687e62594b66bc2dc1e945b34b2c818<>res://.godot/imported/Score.svg-82d1d2db9b28bd36b30ff83f193d09ae.ctex::
+ScoreFocused.svg::CompressedTexture2D::8813678958543817851::1772016605::1772016605::1::::<><><>0<>0<>cc1176ffb89709ab7635a0b6f51ada24<>res://.godot/imported/ScoreFocused.svg-8084031b5f04aeef7ca16699eb3169bd.ctex::
+Start.svg::CompressedTexture2D::999926242909746264::1772016605::1772016605::1::::<><><>0<>0<>f65093ad2104a1bbd78153fecfe31365<>res://.godot/imported/Start.svg-5f7884dc313301d47da81087a2fcbb3d.ctex::
+StartFocused.svg::CompressedTexture2D::4206779793737192359::1772016605::1772016605::1::::<><><>0<>0<>da96d5ebaeef1a7812c59ce21b063cda<>res://.godot/imported/StartFocused.svg-2dd7074bf711e005d80044066c4123d6.ctex::
+Title.png::CompressedTexture2D::5680614111103735741::1772016605::1772016605::1::::<><><>0<>0<>a45a55fe57e43cec9a41f22dd8f40826<>res://.godot/imported/Title.png-d2951b756f9321a141f1cc8acdf2f2b3.ctex::
+::res://Icons/ScoreButtons/::1772016606
+Refresh.svg::CompressedTexture2D::7318773821088106441::1772016605::1772016605::1::::<><><>0<>0<>626d9a705a8632a445ac765076cab8f2<>res://.godot/imported/Refresh.svg-29ec52fdff6e076b6b7f88f31a222804.ctex::
+RefreshPressed.svg::CompressedTexture2D::1266753762342905564::1772016606::1772016606::1::::<><><>0<>0<>7b60114633ee25d736f0830f69082e72<>res://.godot/imported/RefreshPressed.svg-ea19affdd6ebecee33a6e117aafebc8d.ctex::
+SPoints.svg::CompressedTexture2D::6763383188824600426::1772016605::1772016605::1::::<><><>0<>0<>9658e8eac82c3fc5da6a3c9b9500b364<>res://.godot/imported/SPoints.svg-537247992100027aa1e7b438e790599c.ctex::
+SPointsPressed.svg::CompressedTexture2D::3224621400749460507::1772016605::1772016605::1::::<><><>0<>0<>4e60dc01400d8d20851f33dc614f5885<>res://.godot/imported/SPointsPressed.svg-071b1005d2641631ec5e9571ae1cebbd.ctex::
+SRecent.svg::CompressedTexture2D::8401439604201001539::1772016604::1772016604::1::::<><><>0<>0<>b5d320af823b460720047be6adf3728f<>res://.godot/imported/SRecent.svg-5267f8b76561b730f9ebc269705dfabc.ctex::
+SRecentPressed.svg::CompressedTexture2D::738071092386382497::1772016606::1772016606::1::::<><><>0<>0<>bff7beeade51d0895cc95ab1f55a9349<>res://.godot/imported/SRecentPressed.svg-f2251e9c89f9829b9acaefb5f4b7a6ed.ctex::
+STime.svg::CompressedTexture2D::9102136786980620199::1772016605::1772016605::1::::<><><>0<>0<>ce8cd79c9fbd7fcb1841cbd49d0ca7c4<>res://.godot/imported/STime.svg-c1e88e393574bd0936d3d4b9c7a74d6e.ctex::
+STimePressed.svg::CompressedTexture2D::8717083277273392523::1772016605::1772016605::1::::<><><>0<>0<>b602554766f1bc8980337162558fb858<>res://.godot/imported/STimePressed.svg-cfcabc38ac29fa729b6b338c431e1974.ctex::
+::res://Icons/Volume/::1772016605
+20N.svg::CompressedTexture2D::4675781329787247358::1772016605::1772016605::1::::<><><>0<>0<>be4ab4c84a21d8bd16369609035bcd9d<>res://.godot/imported/20N.svg-0c92634340714289a17d738559c7260f.ctex::
+20P.png::CompressedTexture2D::4808752539224691749::1772016605::1772016605::1::::<><><>0<>0<>5940adc00020670057097e45d6ccb762<>res://.godot/imported/20P.png-641b8755dcf078eaaef2a7899ab539b0.ctex::
+40N.svg::CompressedTexture2D::7876223108110626686::1772016605::1772016605::1::::<><><>0<>0<>1a428a32be5e3a2b58b0a6763295e947<>res://.godot/imported/40N.svg-298623a99df90c1f57653da250ed01ee.ctex::
+40P.png::CompressedTexture2D::5086455486294682758::1772016605::1772016605::1::::<><><>0<>0<>ca61886d5981f476bada8304dafbe994<>res://.godot/imported/40P.png-bf58325eb034c442d2369563bc889eaa.ctex::
+60N.svg::CompressedTexture2D::3367234267044236885::1772016605::1772016605::1::::<><><>0<>0<>2eec671ac624ef0cb9a0f57a62b648b0<>res://.godot/imported/60N.svg-06561a2d2a654204e2cb600a08393e51.ctex::
+60P.png::CompressedTexture2D::8929884857730578094::1772016605::1772016605::1::::<><><>0<>0<>850efdaa21f50f93d5721878ac59b48e<>res://.godot/imported/60P.png-00aa641b55429c111787b3a879fc50b8.ctex::
+80N.svg::CompressedTexture2D::4509357617676144295::1772016605::1772016605::1::::<><><>0<>0<>ca3cc94ec21b3ef4ddda30aa74acbcd7<>res://.godot/imported/80N.svg-9711f33d5f8ece3b93345459ebdc5ee9.ctex::
+80P.png::CompressedTexture2D::1448185183200041298::1772016604::1772016604::1::::<><><>0<>0<>68f3599844ebf3ba70c2ba04ebbb8744<>res://.godot/imported/80P.png-2ece885bf622e3b65b82ece9e3f56373.ctex::
+100N.svg::CompressedTexture2D::2824470879036203771::1772016605::1772016605::1::::<><><>0<>0<>6397c7cd1fbd227f14ec89f78a9b9810<>res://.godot/imported/100N.svg-b7712fc690890ab607491866c52cc18e.ctex::
+100P.png::CompressedTexture2D::8534718385508767443::1772016605::1772016605::1::::<><><>0<>0<>5a262ff85c740e98c20560d7a27f538c<>res://.godot/imported/100P.png-598bc56e259217c9ba7b587ffa52bdf1.ctex::
+MuteN.svg::CompressedTexture2D::5071250726395937294::1772016604::1772016604::1::::<><><>0<>0<>78d3a6c63d8eaf6057e4b27eb6264348<>res://.godot/imported/MuteN.svg-1775147a547d1d53c86154a124f5beb4.ctex::
+MuteP.svg::CompressedTexture2D::8094381761605827978::1772016604::1772016604::1::::<><><>0<>0<>1380075499e8ff538c22cb62cf8261c6<>res://.godot/imported/MuteP.svg-63f9eee05928d4186274bde913237a5b.ctex::
+::res://Music/::1772016604
+EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3::AudioStreamMP3::3391362603506741803::1772016604::1772016604::1::::<><><>0<>0<>d5089f18ad2957eeed85388b388a67f3<>res://.godot/imported/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3-e8c54caf233e55cfdf86e1766a216d43.mp3str::
+::res://Scenes/::1772016606
+Game.tscn::PackedScene::486974782262133734::1772016605::0::1::::<><><>0<>0<><>::uid://b8me24kba7vqb::::res://Scripts/startgame.gd<>uid://jvpwoyesow68::::res://Icons/Placeholder Button.png<>uid://b2n45j8rm03x5::::res://Icons/Placeholder Map.png<>uid://chiup6kll43jw::::res://Icons/back.png
+Level-End.tscn::PackedScene::7389277074043681549::1772016605::0::1::::<><><>0<>0<><>::uid://bcbpcsqttlctj::::res://Scripts/level_end.gd<>uid://6y0xugw5jye2::::res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf<>uid://jvpwoyesow68::::res://Icons/Placeholder Button.png
+LevelManage.tscn::PackedScene::3671845744332586548::1772016604::0::1::::<><><>0<>0<><>::uid://qpxtxnlohpkl::::res://Scripts/level-manage.gd
+MainMenu.tscn::PackedScene::6441786645572101669::1772016604::0::1::::<><><>0<>0<><>::uid://coy23diec47kf::::res://main_menu.gd<>uid://csss2b11b03rn::::res://Scenes/start.gd<>uid://d03o8gjr7546a::::res://options.gd<>uid://oimvy3l8ukxs::::res://Icons/Start.svg<>uid://b062bwftnlww2::::res://Icons/StartFocused.svg<>uid://1hgywjrmuos8::::res://Icons/Options.svg<>uid://b7pmi25512jtq::::res://Icons/OptionsFocused.svg<>uid://dqpo1lpdhgxiy::::res://Icons/Score.svg<>uid://dxtoafq2cvx8v::::res://Icons/ScoreFocused.svg<>uid://bkp1upl6v843t::::res://Icons/Quit.svg<>uid://8aq26g27tq0p::::res://Icons/QuitFocused.svg<>uid://bok2incgoeoqt::::res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3<>uid://cm6y5co5dshqb::::res://Icons/Title.png
+maze.gd::GDScript::7141207046069317608::1772016604::0::1::::<>Node2D<><>0<>0<><>::
+Maze.tscn::PackedScene::7727734209151060383::1772016605::0::1::::<><><>0<>0<><>::uid://c80ivwbcj002w::::res://Scenes/maze.gd<>uid://cm6cc6n155mut::::res://assests/merge-mazetile.png<>uid://565cojm8hhd5::::res://assests/mazetile.png<>uid://lyjarmwirf8c::::res://assests/redtile.png<>uid://bk7hx03dinv0h::::res://assests/greentile.png<>uid://bqrivflwpfyix::::res://Scripts/player.gd<>uid://4r7uyaashegg::::res://assests/player-sprite.png<>uid://8mo4i1sksvb::::res://Scripts/hud.gd<>uid://6y0xugw5jye2::::res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf<>uid://djf6vwioas3f1::::res://Scripts/minimap.gd<>uid://b2n45j8rm03x5::::res://Icons/Placeholder Map.png<>uid://oimvy3l8ukxs::::res://Icons/Start.svg<>uid://b062bwftnlww2::::res://Icons/StartFocused.svg<>uid://1hgywjrmuos8::::res://Icons/Options.svg<>uid://b7pmi25512jtq::::res://Icons/OptionsFocused.svg<>uid://bkp1upl6v843t::::res://Icons/Quit.svg<>uid://8aq26g27tq0p::::res://Icons/QuitFocused.svg
+options-menu.gd::GDScript::8211934075297101642::1772016605::0::1::::<>Control<><>0<>0<><>::
+Options.tscn::PackedScene::5726138094334286287::1772016604::0::1::::<><><>0<>0<><>::uid://do86mby8asr7w::::res://Scenes/options-menu.gd<>uid://bok2incgoeoqt::::res://Music/EoSD Main Menu Theme A Dream That is More Scarlet Than Red (Re-Extended).mp3<>uid://b3ksr0uc67xqg::::res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf<>uid://b7u8o2jpdsjwo::::res://Icons/Volume/20N.svg<>uid://carnpmhyppqb2::::res://Icons/Volume/20P.png<>uid://dkhkij5w418p3::::res://Icons/Volume/40N.svg<>uid://cep6gcumnwmcs::::res://Icons/Volume/40P.png<>uid://bn8d4eaxysfgf::::res://Icons/Volume/60N.svg<>uid://d0hx5tfyj3qjm::::res://Icons/Volume/60P.png<>uid://b5impxcs7oin4::::res://Icons/Volume/80N.svg<>uid://uvrnssd7mtcc::::res://Icons/Volume/80P.png<>uid://bgigvf4jvtskx::::res://Icons/Volume/100N.svg<>uid://dtujtg8x7drrv::::res://Icons/Volume/100P.png<>uid://ceis0143v1abm::::res://Icons/Volume/MuteN.svg<>uid://dnk8jxqaxkn2a::::res://Icons/Volume/MuteP.svg<>uid://dknhxhhd363l1::::res://Icons/Minimap-Off.svg<>uid://c1y7d55iahd4p::::res://Icons/Minimap-On.svg<>uid://chiup6kll43jw::::res://Icons/back.png<>uid://tkn62xo4c3c2::::res://Icons/OptionsTitle.png
+round-end.gd::GDScript::5158785155995676896::1772016604::0::1::::<>Control<><>0<>0<><>::
+Round-End.tscn::PackedScene::3597220978008259605::1772016605::0::1::::<><><>0<>0<><>::uid://cfq7o5d0ajdue::::res://Scenes/round-end.gd<>uid://cqm5qbwlcbaag::::res://fonts/Font.tres<>uid://bkp1upl6v843t::::res://Icons/Quit.svg<>uid://8aq26g27tq0p::::res://Icons/QuitFocused.svg
+Score-Table.tscn::PackedScene::4891927059599540603::1772016605::0::1::::<><><>0<>0<><>::uid://b58tdnb7vuk0n::::res://Scripts/score-read.gd<>uid://6y0xugw5jye2::::res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf<>uid://cqm5qbwlcbaag::::res://fonts/Font.tres<>uid://drxyqoet0crd0::::res://Icons/ScoreButtons/SRecent.svg<>uid://krr6nb4yxbaf::::res://Icons/ScoreButtons/SRecentPressed.svg<>uid://c3mh6yr0e1wmk::::res://Icons/ScoreButtons/SPoints.svg<>uid://bl7bbqdyrf82j::::res://Icons/ScoreButtons/SPointsPressed.svg<>uid://d2xe4lxbc8bp4::::res://Icons/ScoreButtons/STime.svg<>uid://dwgvc8ys0afe6::::res://Icons/ScoreButtons/STimePressed.svg<>uid://dcjjeuxsphr0l::::res://Icons/ScoreButtons/Refresh.svg<>uid://sbviqkb3k525::::res://Icons/ScoreButtons/RefreshPressed.svg
+start.gd::GDScript::6074540568621027415::1772016605::0::1::::<>Button<><>0<>0<><>::
+::res://Scripts/::1772016606
+globals.gd::GDScript::2674266486329622978::1772016604::0::1::::<>Node<><>0<>0<><>::
+hud.gd::GDScript::68879607653217859::1772016605::0::1::::<>Node<><>0<>0<><>::
+level-manage.gd::GDScript::1155418814075538387::1772016604::0::1::::<>Control<><>0<>0<><>::
+level_end.gd::GDScript::2529778046228804351::1772016605::0::1::::<>Control<><>0<>0<><>::
+minimap.gd::GDScript::7803204429548631172::1772016605::0::1::::<>SubViewport<><>0<>0<><>::
+player.gd::GDScript::3545060121964218143::1772016604::0::1::::<>CharacterBody2D<><>0<>0<><>::
+score-read.gd::GDScript::4561370124793474103::1772016605::0::1::::<>Control<><>0<>0<><>::
+startgame.gd::GDScript::4727717679875301397::1772016604::0::1::::<>Control<><>0<>0<><>::

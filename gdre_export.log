@@ -1,0 +1,46 @@
+GDRE Tools v2.4.0
+CachyOS Linux #1 SMP PREEMPT_DYNAMIC Sat, 07 Feb 2026 00:59:36 +0000, Intel(R) HD Graphics 5500 (BDW GT2), vulkan
+WARNING: Could not find embedded pck in EXE, found pck file, loading from: /home/zecoa/Downloads/Windows/Project Maze.pck
+   at: sort_and_validate_pck_files (modules/gdsdecomp/utility/gdre_settings.cpp:594)
+Opening file: ~/Downloads/Windows/Project Maze.pck
+Loaded 80 imported files
+Detected Engine Version: 4.5.1
+Detected Bytecode Revision: 4.5.0-stable (ebc36a7)
+Verified 172 files, no errors detected!
+Warning: res://data/template.00:03:30.00.translation is a malformed path!
+Saving to res://data/template.00_03_30.00.translation instead.
+Warning: res://data/template.00:06:30.00.translation is a malformed path!
+Saving to res://data/template.00_06_30.00.translation instead.
+Extracted 172 files, no errors detected!
+ERROR: Failed to find gdextension libraries for plugin res://addons/godot-git-plugin/git_plugin.gdextension
+   at: export_resource (modules/gdsdecomp/exporters/gdextension_exporter.cpp:195)
+Loading resource strings, this may take a while!!
+Resource strings loaded!
+Saved project config.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     14
+Failed scripts:                         0
+Imported resources for export session:  80
+Successfully converted:                 79
+Lossy:                                  29
+Rewrote metadata:                       55
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     1
+-------------
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.5.1 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+
